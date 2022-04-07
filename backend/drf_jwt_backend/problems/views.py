@@ -36,5 +36,6 @@ def problem_detail(request, pk):
         return Response(serializer.data)
     elif request.method == 'DELETE':
         problem.delete()
+        print('the odds are now even')
         return Response(status=status.HTTP_204_NO_CONTENT)
 
