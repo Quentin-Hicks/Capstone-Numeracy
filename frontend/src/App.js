@@ -16,7 +16,7 @@ import SubmmissionPage from "./pages/SubmissionPage/SubmissionPage"
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import ProblemCard from "./components/ProblemCard/ProblemCard"
-import ProblemDetails from "./components/ProblemDetails/ProblemDetails"
+import ProblemDisplay from "./components/ProblemDisplay/ProblemDisplay"
 import SubmissionPage from "./components/SubmissionForm/SubmissionForm"
 
 // Util Imports
