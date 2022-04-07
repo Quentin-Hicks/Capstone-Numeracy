@@ -26,10 +26,15 @@ def problem_detail(request, pk):
     problem = get_object_or_404(Problem, pk=pk)
     if request.method == 'GET':
         serializer = ProblemSerializer(problem)
-        return Response('big number slumber')
+        print('big number slumber')
         return Response(serializer.data)
     elif request.method == 'PUT':
-        pass
+        serializer = ProblemSerializer(problem, data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        print('by the numbers')
+        return Response(serializer.data)
     elif request.method == 'DELETE':
-        pass
+        problem.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
