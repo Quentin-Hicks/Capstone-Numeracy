@@ -9,7 +9,9 @@ from .models import Problem
 @api_view(['GET', 'POST'])
 def problems_list(request):
     if request.method == 'GET':
-        pass
+        problems = Problem.objects.all()
+        serializer = ProblemSerializer(problems, many=True)
+        return Response('math')
     elif request.method == 'POST':
         pass
 
