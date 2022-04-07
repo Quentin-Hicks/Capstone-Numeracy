@@ -6,4 +6,4 @@ class Problem(models.Model):
     # content = models.CharField(max_length=255)
     # hints = models.CharField(max_length=255)
     # answer = models.DecimalField(max_digits=24, decimal_places=6)
-    # learningResources = models.CharField(max_length=255)
+    resources = models.TextField()
