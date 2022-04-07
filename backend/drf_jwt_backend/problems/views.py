@@ -9,22 +9,25 @@ from .models import Problem
 @api_view(['GET', 'POST'])
 def problems_list(request):
     if request.method == 'GET':
-        # problems = Problem.objects.all()
-        # serializer = ProblemSerializer(problems, many=True)
-        return Response('math')
+        problems = Problem.objects.all()
+        serializer = ProblemSerializer(problems, many=True)
+        print('math')
         return Response(serializer.data)
     elif request.method == 'POST':
-        # serializer = ProblemSerializer(data=request.data)
-        # serializer.is_valid(raise_exception=True)
-        # serializer.save()
-        return Response('math hurts only a lot')
+        serializer = ProblemSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        print('math only hurts a lot')
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
 def problem_detail(request, pk):
+    problem = get_object_or_404(Problem, pk=pk)
     if request.method == 'GET':
-        pass
+        serializer = ProblemSerializer(problem)
+        return Response('big number slumber')
+        return Response(serializer.data)
     elif request.method == 'PUT':
         pass
     elif request.method == 'DELETE':
