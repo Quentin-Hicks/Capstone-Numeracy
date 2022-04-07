@@ -9,11 +9,16 @@ from .models import Problem
 @api_view(['GET', 'POST'])
 def problems_list(request):
     if request.method == 'GET':
-        problems = Problem.objects.all()
-        serializer = ProblemSerializer(problems, many=True)
+        # problems = Problem.objects.all()
+        # serializer = ProblemSerializer(problems, many=True)
         return Response('math')
+        return Response(serializer.data)
     elif request.method == 'POST':
-        pass
+        # serializer = ProblemSerializer(data=request.data)
+        # serializer.is_valid(raise_exception=True)
+        # serializer.save()
+        return Response('math hurts only a lot')
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
