@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('content', models.CharField(max_length=255)),
                 ('hints', models.CharField(max_length=255)),
                 ('answer', models.DecimalField(decimal_places=6, max_digits=24)),
-                ('learningResources', models.CharField(max_length=255)),
+                ('resources', models.CharField(max_length=255)),
             ],
         ),
     ]
