@@ -1,4 +1,4 @@
-import "./ProblemDislpay.css"
+// import "./ProblemDislpay.css"
 import React, { useState } from 'react';
 
 const ProblemDislpay = () => {

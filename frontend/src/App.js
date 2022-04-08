@@ -17,14 +17,14 @@ import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import ProblemCard from "./components/ProblemCard/ProblemCard"
 import ProblemDisplay from "./components/ProblemDisplay/ProblemDisplay"
-import SubmissionPage from "./components/SubmissionForm/SubmissionForm"
+import SubmissionForm from "./components/SubmissionForm/SubmissionForm"
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
   return (
-    <div>
+    <>
       <Navbar />
       <Routes>
         <Route
@@ -39,7 +39,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
       </Routes>
       <Footer />
-    </div>
+    </>
   );
 }
 
