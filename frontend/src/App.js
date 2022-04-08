@@ -28,7 +28,12 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route
+          <Route path="/" element={<CapstoneHomePage />} />
+          <Route path="/collection" element={<CollectionPage />} />
+          <Route path="/problem" element={<ProblemPage />} />
+          <Route path="/submission" element={<SubmmissionPage />} />
+          
+        {/* <Route
           path="/"
           element={
             <PrivateRoute>
@@ -37,7 +42,7 @@ function App() {
           }
         />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} /> */}
       </Routes>
       <Footer />
     </>
