@@ -18,6 +18,7 @@ import Footer from "./components/Footer/Footer";
 import ProblemCard from "./components/ProblemCard/ProblemCard"
 import ProblemDisplay from "./components/ProblemDisplay/ProblemDisplay"
 import SubmissionForm from "./components/SubmissionForm/SubmissionForm"
+import CapstoneHomePage from "./pages/CapstoneHomePage/CapstoneHomePage";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";

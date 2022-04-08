@@ -8,7 +8,7 @@ const SubmissionPage = () => {
 
     return (
         <>
-        
+            <h1>Submission Page</h1>
         </>
     )
 }
