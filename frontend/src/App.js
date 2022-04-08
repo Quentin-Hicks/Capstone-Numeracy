@@ -14,6 +14,7 @@ import SubmmissionPage from "./pages/SubmissionPage/SubmissionPage"
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
+import CapstoneNavBar from "./components/CapstoneNavBar/CapstoneNavBar";
 import Footer from "./components/Footer/Footer";
 import ProblemCard from "./components/ProblemCard/ProblemCard"
 import ProblemDisplay from "./components/ProblemDisplay/ProblemDisplay"
@@ -24,8 +25,12 @@ import CapstoneHomePage from "./pages/CapstoneHomePage/CapstoneHomePage";
 import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
+
+  // debugger
+
   return (
     <>
+      {/* <CapstoneNavBar /> */}
       <Navbar />
       <Routes>
           <Route path="/" element={<CapstoneHomePage />} />
