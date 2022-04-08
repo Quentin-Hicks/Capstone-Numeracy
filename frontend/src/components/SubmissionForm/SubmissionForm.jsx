@@ -7,7 +7,7 @@ const SubmissionForm = () => {
 
     return (
         <>
-        
+            <h3>Submit A Math Problem</h3>
         </>
     )
 }

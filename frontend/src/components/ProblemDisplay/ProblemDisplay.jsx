@@ -6,7 +6,7 @@ const ProblemDislpay = () => {
 
     return (
         <>
-        
+            <h3>Problem 1</h3>
         </>
     )
 }

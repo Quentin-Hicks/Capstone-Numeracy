@@ -6,7 +6,7 @@ const ProblemCard = () => {
 
     return (
         <>
-        
+            <h3>Problem Title Cards</h3>
         </>
     )
 }
