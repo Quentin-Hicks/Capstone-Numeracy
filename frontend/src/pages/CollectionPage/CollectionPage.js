@@ -4,13 +4,13 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const CollectionPage = () => {
+const CollectionPage = ({problems}) => {
 
 
     return (
         <>
             <h1>Collection Page</h1>
-            <ProblemCard />
+            <ProblemCard problems={problems}/>
         </>
     )
 }

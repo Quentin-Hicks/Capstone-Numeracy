@@ -28,13 +28,25 @@ function App() {
 
   // debugger
 
+  const [problems, setProblems] = useState([])
+
+    useEffect(()=> {
+        getAllProblems();
+    }, [])
+
+    async function getAllProblems(){
+        let response = await axios.get('http://127.0.0.1:8000/api/problems/');
+        console.log(response.data)
+        setProblems(response.data);
+  }
+
   return (
     <>
       {/* <CapstoneNavBar /> */}
       <Navbar />
       <Routes>
           <Route path="/" element={<CapstoneHomePage />} />
-          <Route path="/collection" element={<CollectionPage />} />
+          <Route path="/collection" element={<CollectionPage problems= {problems}/>} />
           <Route path="/problem" element={<ProblemPage />} />
           <Route path="/submission" element={<SubmmissionPage />} />
           

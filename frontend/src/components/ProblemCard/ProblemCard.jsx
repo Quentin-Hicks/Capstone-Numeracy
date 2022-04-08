@@ -1,27 +1,35 @@
 import "./ProblemCard.css"
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
 
-const ProblemCard = () => {
+const ProblemCard = ({problems}) => {
 
-    const [problem, setProblem] = useState([])
+    const [problemCard, setProblemCard] = useState('1')
 
-    useEffect(()=> {
-        getAllProblems();
-    }, [])
+    useEffect(() =>{
+        console.log('numbers')
+        console.log(problemCard)
+        generateData()
+    }, [problemCard])
 
-    async function getAllProblems(){
-        let response = await axios.get('http://127.0.0.1:8000/api/problems/');
-        console.log(response.data)
-        setProblem(response.data);
-  }
+    function generateData(){
+        let problem = problems.map(problem => {
+            return problem
+        })
+        console.log(problem)
+    }
+
+    // let problemTitle = problems.filter(problem => {
+    //     if(problem){
+    //         console.log(problem.title)
+    //     }
+    // })
 
     return (
         <>
             <h3>Problem Title Cards</h3>
-            {/* <button onClick={() => setProblem('calculus')}>Math 1</button>
-            <button onClick={() => setProblem('algebra')}>Math 2</button>
-            <button onClick={() => setProblem('geometry')}>Math 3</button> */}
+            <button onClick={() => setProblemCard('1')}>Math 1</button>
+            <button onClick={() => setProblemCard('2')}>Math 2</button>
+            <button onClick={() => setProblemCard('3')}>Math 3</button>
         </>
     )
 }
