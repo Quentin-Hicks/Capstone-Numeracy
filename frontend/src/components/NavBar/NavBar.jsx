@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className="navBar">
       <ul>
-        <li className="brand">
+      <li className="brand">
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
             <b>React/Django JWT</b>
           </Link>
