@@ -28,25 +28,25 @@ const ProblemCard = () => {
         return(
             <div className="card">
                 <div className="card_body">
-                    <img src={props.img} />
+                    <img src={props.img} className='card_image'/>
                     <h2 className="card_title">{props.title}</h2>
                     <p className="card_details">{props.description}</p>
                 </div>
-                <button className="card_btn">View Card</button>
+                <button className="card_btn">View Problem</button>
             </div>
         )
     }
 
     return (
-        <div>
+        <div className="wrapper">
             <h3>Problem Title Cards</h3>
             <Card 
-                img="images/small-plane.jpg"
+                img="images/math-equation.jpg"
                 title="The Moon"
                 description="You will need marshmellows"
             />
             <Card 
-                img="images/small-plane.jpg"
+                img="images/math-equation.jpg"
                 title="The Moon"
                 description="You will need marshmellows"
             />
