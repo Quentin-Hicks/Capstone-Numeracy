@@ -41,8 +41,8 @@ const ProblemCard = ({problems}) => {
         <div className="wrapper">
             {problems.map((problem) => {
                 return (
-                    <Link to={`/problem/${problems.id}`} style={{ textDecoration: "none", color: "black" }}>
-                        <div className="card" key={problem.id}>
+                    <Link to={`/problem/${problems.id}`} key={problem.id} style={{ textDecoration: "none", color: "black" }}>
+                        <div className="card">
                             <div className="card_body">
                                 {/* Reminder: remove img src element */}
                                 <img src="images/math-equation.jpg" className='card_image'/>
