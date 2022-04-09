@@ -28,9 +28,9 @@ const ProblemCard = () => {
         return(
             <div className="card">
                 <div className="card_body">
-                    <img src="images/small-plane.jpg" />
-                    <h2 className="card_title">The Moon</h2>
-                    <p className="card_details">You will need marshmellows</p>
+                    <img src={props.img} />
+                    <h2 className="card_title">{props.title}</h2>
+                    <p className="card_details">{props.description}</p>
                 </div>
                 <button className="card_btn">View Card</button>
             </div>
@@ -40,7 +40,16 @@ const ProblemCard = () => {
     return (
         <div>
             <h3>Problem Title Cards</h3>
-            <Card />
+            <Card 
+                img="images/small-plane.jpg"
+                title="The Moon"
+                description="You will need marshmellows"
+            />
+            <Card 
+                img="images/small-plane.jpg"
+                title="The Moon"
+                description="You will need marshmellows"
+            />
 
             {/* <button onClick={() => setProblemCard('1')}>Math 1</button>
             <button onClick={() => setProblemCard('2')}>Math 2</button>
