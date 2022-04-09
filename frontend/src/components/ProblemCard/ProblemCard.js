@@ -1,7 +1,7 @@
 import "./ProblemCard.css"
 import React, { useState, useEffect } from 'react';
 
-function ProblemCard(title, imageUrl, body){
+const ProblemCard = () => {
 
     // const [problemCard, setProblemCard] = useState('1')
 
@@ -24,14 +24,24 @@ function ProblemCard(title, imageUrl, body){
     //     }
     // })
 
+    function Card(props){
+        return(
+            <div className="card">
+                <div className="card_body">
+                    <img src="images/small-plane.jpg" />
+                    <h2 className="card_title">The Moon</h2>
+                    <p className="card_details">You will need marshmellows</p>
+                </div>
+                <button className="card_btn">View Card</button>
+            </div>
+        )
+    }
+
     return (
         <div>
             <h3>Problem Title Cards</h3>
-            <div className="card-container">
-                <div className="image-container">
-                    <img src='frontend\public\images\icons8-youtube-96.png' alt='' />
-                </div>
-            </div>
+            <Card />
+
             {/* <button onClick={() => setProblemCard('1')}>Math 1</button>
             <button onClick={() => setProblemCard('2')}>Math 2</button>
             <button onClick={() => setProblemCard('3')}>Math 3</button> */}
