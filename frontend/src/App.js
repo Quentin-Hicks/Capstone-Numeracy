@@ -48,7 +48,7 @@ function App() {
           <Route path="/" element={<CapstoneHomePage />} />
           <Route path="/collection" element={<CollectionPage problems= {problems}/>} />
           {/* Reminder: need backticks for ProblemPage, `/problem/${problems.title}` */}
-          <Route path="/problem" element={<ProblemPage />} />
+          <Route path={`/problem/${problems.id}`} element={<ProblemPage />} />
           <Route path="/submission" element={<SubmmissionPage />} />
           
         {/* <Route

@@ -1,13 +1,14 @@
 import "./ProblemCard.css"
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
-const ProblemCard = (props) => {
+const ProblemCard = ({problems}) => {
 
     const [viewProblem, setViewProblem] = useState()
 
     function handleView(event){
         event.preventDefault()
-        console.log('this is a problem')
+        console.log(problems)
     }
 
     // useEffect(() =>{
@@ -38,17 +39,19 @@ const ProblemCard = (props) => {
 
     return (
         <div className="wrapper">
-            {props.problems.map((problem) => {
+            {problems.map((problem) => {
                 return (
-                    <div className="card" key={problem.id}>
-                        <div className="card_body">
-                            {/* Reminder: remove img src element */}
-                            <img src="images/math-equation.jpg" className='card_image'/>
-                            <h2 className="card_title">{problem.title}</h2>
-                            <p className="card_details">{problem.content}</p>
+                    <Link to={`/problem/${problems.id}`} style={{ textDecoration: "none", color: "black" }}>
+                        <div className="card" key={problem.id}>
+                            <div className="card_body">
+                                {/* Reminder: remove img src element */}
+                                <img src="images/math-equation.jpg" className='card_image'/>
+                                <h2 className="card_title">{problem.title}</h2>
+                                <p className="card_details">{problem.content}</p>
+                            </div>
+                            {/* <button className="card_btn" onClick={handleView}>View</button> */}
                         </div>
-                        <button className="card_btn" onClick={handleView}>View</button>
-                    </div>
+                    </Link>
                 )
             })}
         </div>
