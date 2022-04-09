@@ -1,7 +1,6 @@
 import React from "react";
 import { useContext } from "react";
 import { useNavigate, Link, NavLink } from "react-router-dom";
-import AuthContext from "../../context/AuthContext";
 import "./CapstoneNavBar.css";
 
 const CapstoneNavBar = () => {

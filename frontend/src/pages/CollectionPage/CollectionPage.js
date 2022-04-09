@@ -2,7 +2,6 @@ import "./CollectionPage.css"
 import ProblemCard from "../../components/ProblemCard/ProblemCard";
 import React from "react";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 const CollectionPage = ({problems}) => {
 
@@ -10,7 +9,12 @@ const CollectionPage = ({problems}) => {
     return (
         <>
             <h1>Collection Page</h1>
-            <ProblemCard problems={problems}/>
+            <ProblemCard 
+                title='Card Title'
+                imageUrl='/images/small-plane.jpg'
+                body='this is a plane'
+                // problems={problems}
+            />
         </>
     )
 }
