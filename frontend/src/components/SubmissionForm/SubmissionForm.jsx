@@ -24,19 +24,19 @@ const SubmissionForm = (props) => {
                 </div>
                 <div className='form-grid'>
                     <label>Content</label>
-                    <input type='text' className='form-control' value={title} onChange={(event) => setContent(event.target.value)} placeholder='Enter content...'/>
+                    <input type='text' className='form-control' value={content} onChange={(event) => setContent(event.target.value)} placeholder='Enter content...'/>
                 </div>
                 <div className='form-grid'>
                     <label>Hints</label>
-                    <input type='text' className='form-control' value={title} onChange={(event) => setHints(event.target.value)} placeholder='Enter hints...'/>
+                    <input type='text' className='form-control' value={hints} onChange={(event) => setHints(event.target.value)} placeholder='Enter hints...'/>
                 </div>
                 <div className='form-grid'>
                     <label>Resources</label>
-                    <input type='text' className='form-control' value={title} onChange={(event) => setResources(event.target.value)} placeholder='Enter resources...'/>
+                    <input type='text' className='form-control' value={resources} onChange={(event) => setResources(event.target.value)} placeholder='Enter resources...'/>
                 </div>
                 <div className='form-grid'>
                     <label>Answer</label>
-                    <input type='text' className='form-control' value={title} onChange={(event) => setAnswer(event.target.value)} placeholder='Enter answer ...'/>
+                    <input type='text' className='form-control' value={answer} onChange={(event) => setAnswer(event.target.value)} placeholder='Enter answer ...'/>
                 </div>
                 <button type="submit">Submit</button>
             </form>
