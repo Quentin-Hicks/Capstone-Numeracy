@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 const ProblemCard = ({problems}) => {
 
-    const [viewProblem, setViewProblem] = useState()
+    // const [viewProblem, setViewProblem] = useState()
 
-    function handleView(event){
-        event.preventDefault()
-        console.log(problems)
-    }
+    // function handleView(event){
+    //     event.preventDefault()
+    //     console.log(problems)
+    // }
 
     // useEffect(() =>{
     //     console.log('numbers')
@@ -22,19 +22,6 @@ const ProblemCard = ({problems}) => {
     //         return problem
     //     })
     //     console.log(problem)
-    // }
-
-    // function Card(props){
-    //     return(
-    //         <div className="card">
-    //             <div className="card_body">
-    //                 <img src={props.img} className='card_image'/>
-    //                 <h2 className="card_title">{props.title}</h2>
-    //                 <p className="card_details">{props.content}</p>
-    //             </div>
-    //             <button className="card_btn">View</button>
-    //         </div>
-    //     )
     // }
 
     return (
