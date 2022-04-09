@@ -1,9 +1,7 @@
 import "./ProblemCard.css"
 import React, { useState, useEffect } from 'react';
 
-const ProblemCard = ({problems}) => {
-
-    // const [problemCard, setProblemCard] = useState('1')
+const ProblemCard = (props) => {
 
     // useEffect(() =>{
     //     console.log('numbers')
@@ -18,34 +16,32 @@ const ProblemCard = ({problems}) => {
     //     console.log(problem)
     // }
 
-    let problemTitle = problems.filter(problem => {
-            console.log(problem.title)
-            return problem.title
-    })
-
-    function Card(props){
-        return(
-            <div className="card">
-                <div className="card_body">
-                    <img src={props.img} className='card_image'/>
-                    <h2 className="card_title">{props.title}</h2>
-                    <p className="card_details">{props.description}</p>
-                </div>
-                <button className="card_btn">View Problem</button>
-            </div>
-        )
-    }
+    // function Card(props){
+    //     return(
+    //         <div className="card">
+    //             <div className="card_body">
+    //                 <img src={props.img} className='card_image'/>
+    //                 <h2 className="card_title">{props.title}</h2>
+    //                 <p className="card_details">{props.content}</p>
+    //             </div>
+    //             <button className="card_btn">View</button>
+    //         </div>
+    //     )
+    // }
 
     return (
         <div className="wrapper">
-            <h3>Problem Title Cards</h3>
-            {problems.map(() => {
+            {props.problems.map((problem) => {
                 return (
-                    <Card 
-                img="images/math-equation.jpg"
-                title='The Moon'
-                description="You will need marshmellows"
-            />
+                    <div className="card" key={problem.id}>
+                        <div className="card_body">
+                            {/* remove image source element */}
+                            <img src="images/math-equation.jpg" className='card_image'/>
+                            <h2 className="card_title">{problem.title}</h2>
+                            <p className="card_details">{problem.content}</p>
+                        </div>
+                        <button className="card_btn">View</button>
+                    </div>
                 )
             })}
 
