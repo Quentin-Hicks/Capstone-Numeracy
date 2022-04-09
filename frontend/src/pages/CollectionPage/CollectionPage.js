@@ -3,16 +3,13 @@ import ProblemCard from "../../components/ProblemCard/ProblemCard";
 import React from "react";
 import { useEffect, useState } from "react";
 
-const CollectionPage = () => {
+const CollectionPage = ({problems}) => {
 
 
     return (
         <div>
             <h1>Collection Page</h1>
-            <ProblemCard 
-                
-                // problems={problems}
-            />
+            <ProblemCard problems={problems} />
         </div>
     )
 }

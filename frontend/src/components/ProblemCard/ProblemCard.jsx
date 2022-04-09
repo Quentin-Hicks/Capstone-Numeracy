@@ -1,7 +1,7 @@
 import "./ProblemCard.css"
 import React, { useState, useEffect } from 'react';
 
-const ProblemCard = () => {
+const ProblemCard = ({problems}) => {
 
     // const [problemCard, setProblemCard] = useState('1')
 
@@ -18,11 +18,10 @@ const ProblemCard = () => {
     //     console.log(problem)
     // }
 
-    // let problemTitle = problems.filter(problem => {
-    //     if(problem){
-    //         console.log(problem.title)
-    //     }
-    // })
+    let problemTitle = problems.filter(problem => {
+            console.log(problem.title)
+            return problem.title
+    })
 
     function Card(props){
         return(
@@ -40,16 +39,15 @@ const ProblemCard = () => {
     return (
         <div className="wrapper">
             <h3>Problem Title Cards</h3>
-            <Card 
+            {problems.map(() => {
+                return (
+                    <Card 
                 img="images/math-equation.jpg"
-                title="The Moon"
+                title='The Moon'
                 description="You will need marshmellows"
             />
-            <Card 
-                img="images/math-equation.jpg"
-                title="The Moon"
-                description="You will need marshmellows"
-            />
+                )
+            })}
 
             {/* <button onClick={() => setProblemCard('1')}>Math 1</button>
             <button onClick={() => setProblemCard('2')}>Math 2</button>
