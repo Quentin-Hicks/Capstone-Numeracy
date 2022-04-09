@@ -15,6 +15,16 @@ const CapstoneNavBar = () => {
                     <p>Capstone Home Page</p>
                 </Link>
             </li>
+            <li className="brand">
+                <Link to="/collection" style={{ textDecoration: "none", color: "black" }}>
+                    <p>Collection Page</p>
+                </Link>
+            </li>
+            <li className="brand">
+                <Link to="/submission" style={{ textDecoration: "none", color: "black" }}>
+                    <p>Submission Page</p>
+                </Link>
+            </li>
           </ul>
         </div>
     )

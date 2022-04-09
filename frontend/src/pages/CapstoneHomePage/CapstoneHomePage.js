@@ -9,9 +9,7 @@ const CapstoneHomePage = () => {
 
     return (
         <>
-            <Link to="/collection" style={{ textDecoration: "none", color: "black" }}>
-                <h1>Capstone Home Page</h1>
-            </Link>
+            <h1>Capstone Home Page</h1>
         </>
     )
 }
