@@ -36,7 +36,7 @@ const SubmissionForm = (props) => {
                 </div>
                 <div className='form-grid'>
                     <label>Answer</label>
-                    <input type='text' className='form-control' value={title} onChange={(event) => setAnswer(event.target.value)} placeholder='Enter answer...'/>
+                    <input type='text' className='form-control' value={title} onChange={(event) => setAnswer(event.target.value)} placeholder='Enter answer ...'/>
                 </div>
                 <button type="submit">Submit</button>
             </form>
