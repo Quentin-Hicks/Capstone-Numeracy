@@ -3,6 +3,13 @@ import React, { useState, useEffect } from 'react';
 
 const ProblemCard = (props) => {
 
+    const [viewProblem, setViewProblem] = useState()
+
+    function handleView(event){
+        event.preventDefault()
+        console.log('this is a problem')
+    }
+
     // useEffect(() =>{
     //     console.log('numbers')
     //     console.log(problemCard)
@@ -35,19 +42,15 @@ const ProblemCard = (props) => {
                 return (
                     <div className="card" key={problem.id}>
                         <div className="card_body">
-                            {/* remove image source element */}
+                            {/* Reminder: remove img src element */}
                             <img src="images/math-equation.jpg" className='card_image'/>
                             <h2 className="card_title">{problem.title}</h2>
                             <p className="card_details">{problem.content}</p>
                         </div>
-                        <button className="card_btn">View</button>
+                        <button className="card_btn" onClick={handleView}>View</button>
                     </div>
                 )
             })}
-
-            {/* <button onClick={() => setProblemCard('1')}>Math 1</button>
-            <button onClick={() => setProblemCard('2')}>Math 2</button>
-            <button onClick={() => setProblemCard('3')}>Math 3</button> */}
         </div>
     )
 }
