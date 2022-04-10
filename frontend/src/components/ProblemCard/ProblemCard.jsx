@@ -7,12 +7,14 @@ import { Link } from "react-router-dom";
 
 const ProblemCard = ({problems}) => {
 
-    // const [problemData, setProblemData] = useState()
+    const [problemData, setProblemData] = useState()
 
-    // let arrayOfProblems = problems.map(problem => {
-    //     return problem
-    // })
-    // console.log(arrayOfProblems)
+    useEffect(() => {
+        console.log(`problem changed`)
+    }, [problemData], console.log(problemData))
+
+    // console.log(problemData)
+
 
     // let problemTitle = arrayOfProblems.filter(problem => problem.title)
     // console.log('Problem Title', problemTitle)
@@ -28,12 +30,6 @@ const ProblemCard = ({problems}) => {
     //     setProblemData()
     // }
 
-    // useEffect(() =>{
-    //     console.log('numbers')
-    //     // console.log(problemCard)
-    //     problemCardData()
-    // }, [problemData])
-
     function problemCardData(){
         return (
             <div className="wrapper">
@@ -48,7 +44,7 @@ const ProblemCard = ({problems}) => {
                                     <h2 className="card_title">{problem.title}</h2>
                                     <p className="card_details">{problem.content}</p>
                                 </div>
-                                <button className="card_btn">View</button>
+                                <button className="card_btn" onClick={() => setProblemData(problem)}>View</button>
                             </div>
                         // </Link>
                     )
