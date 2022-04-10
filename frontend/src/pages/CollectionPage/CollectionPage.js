@@ -8,7 +8,7 @@ const CollectionPage = ({problems}) => {
 
     return (
         <div>
-            <h1>Collection Page</h1>
+            {/* <h1>Collection Page</h1> */}
             <ProblemCard problems={problems} />
         </div>
     )
