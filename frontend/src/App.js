@@ -1,7 +1,8 @@
 // General Imports
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet } from "react-router-dom";
+import { render } from "react-dom"
 import axios from "axios"
 import "./App.css";
 
@@ -21,6 +22,11 @@ import ProblemCard from "./components/ProblemCard/ProblemCard"
 import ProblemDisplay from "./components/ProblemDisplay/ProblemDisplay"
 import SubmissionForm from "./components/SubmissionForm/SubmissionForm"
 import CapstoneHomePage from "./pages/CapstoneHomePage/CapstoneHomePage";
+
+// Example Code via React Router Documentation
+import Main from "./Main.jsx";
+import Expenses from "./routes/expenses"
+import Invoices from "./routes/invoices";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
@@ -42,31 +48,36 @@ function App() {
   // }
 
   return (
-    <div>
-      {/* <CapstoneNavBar /> */}
-      
-      
-       {/* <Routes> */}
-          {/* <Route path="/" element={<CapstoneHomePage />} /> */}
-          {/* <Route path="collection" element={<CollectionPage problems= {problems}/>} /> */}
-          {/* Reminder: need backticks for ProblemPage, `/problem/${problems.title}` */}
-          {/* <Route path="problem" /> */}
-          {/* <Route path="submission" element={<SubmmissionPage />} /> */}
-          
-        {/* <Route
-          path="/"
-          element={
-            <PrivateRoute>
-              <HomePage />
-            </PrivateRoute>
-          }
-        />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} /> */}
-      {/* </Routes> */}
-      {/* <Footer /> */}
-    </div>
-  );
+    <BrowserRouter>
+      <div>
+          <Main />
+      </div>
+    </BrowserRouter>
+  )
+  // // return (
+  //       {/* <div> */}
+  //       {/* <CapstoneNavBar /> */}
+  //       {/* <Routes> */}
+  //           {/* <Route path="/" element={<CapstoneHomePage />} /> */}
+  //           {/* <Route path="collection" element={<CollectionPage problems= {problems}/>} /> */}
+  //           {/* Reminder: need backticks for ProblemPage, `/problem/${problems.title}` */}
+  //           {/* <Route path="problem" /> */}
+  //           {/* <Route path="submission" element={<SubmmissionPage />} /> */}
+            
+  //         {/* <Route
+  //           path="/"
+  //           element={
+  //             <PrivateRoute>
+  //               <HomePage />
+  //             </PrivateRoute>
+  //           }
+  //         />
+  //         <Route path="/register" element={<RegisterPage />} />
+  //         <Route path="/login" element={<LoginPage />} /> */}
+  //       {/* </Routes> */}
+  //       {/* <Footer /> */}
+  //     {/* </div> */}
+  // // )
 }
 
 export default App
