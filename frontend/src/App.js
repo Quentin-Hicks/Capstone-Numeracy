@@ -1,6 +1,7 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
+import { Link, Outlet } from "react-router-dom";
 import axios from "axios"
 import "./App.css";
 
@@ -24,33 +25,43 @@ import CapstoneHomePage from "./pages/CapstoneHomePage/CapstoneHomePage";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 
-function App() {
+export default function App() {
 
   // debugger
 
-  const [problems, setProblems] = useState([])
+  // const [problems, setProblems] = useState([])
 
-    useEffect(()=> {
-        getAllProblems();
-    }, [])
+  //   useEffect(()=> {
+  //       getAllProblems();
+  //   }, [])
 
-    async function getAllProblems(){
-        let response = await axios.get('http://127.0.0.1:8000/api/problems/');
-        // console.log(response.data)
-        setProblems(response.data);
-  }
+  //   async function getAllProblems(){
+  //       let response = await axios.get('http://127.0.0.1:8000/api/problems/');
+  //       // console.log(response.data)
+  //       setProblems(response.data);
+  // }
 
   return (
     <div>
-      <CapstoneNavBar />
-      {/* <Navbar /> */}
+      {/* <CapstoneNavBar /> */}
+      <h1>Bookkeeper!</h1>
+      <nav
+        style={{
+          borderBottom: "solid 1px",
+          paddingBottom: "1rem",
+        }}
+      >
+        <Link to="/invoices">Invoices</Link> |{" "}
+        <Link to="/expenses">Expenses</Link>
+      </nav>
+      <Outlet />
       
-       <Routes>
-          <Route path="/" element={<CapstoneHomePage />} />
-          <Route path="/collection" element={<CollectionPage problems= {problems}/>} />
+       {/* <Routes> */}
+          {/* <Route path="/" element={<CapstoneHomePage />} /> */}
+          {/* <Route path="collection" element={<CollectionPage problems= {problems}/>} /> */}
           {/* Reminder: need backticks for ProblemPage, `/problem/${problems.title}` */}
-          {/* <Route path={`/problem/${problems.id}`} element={<ProblemPage problems= {problems}/>} /> */}
-          <Route path="/submission" element={<SubmmissionPage />} />
+          {/* <Route path="problem" /> */}
+          {/* <Route path="submission" element={<SubmmissionPage />} /> */}
           
         {/* <Route
           path="/"
@@ -62,10 +73,10 @@ function App() {
         />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} /> */}
-      </Routes>
-      <Footer />
+      {/* </Routes> */}
+      {/* <Footer /> */}
     </div>
   );
 }
 
-export default App;
+// export default App

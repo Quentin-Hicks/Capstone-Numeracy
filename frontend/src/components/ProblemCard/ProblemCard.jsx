@@ -1,7 +1,9 @@
 import "./ProblemCard.css"
 // REMINDER: May need to import display component
 // to pass down state variable
+import { Routes, Route } from "react-router-dom";
 import ProblemDislpay from "../ProblemDisplay/ProblemDisplay";
+import ProblemPage from "../../pages/ProblemPage/ProblemPage";
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
@@ -10,20 +12,12 @@ const ProblemCard = ({problems}) => {
     const [problemData, setProblemData] = useState()
 
     useEffect(() => {
-        console.log(`problem changed`)
-    }, [problemData], console.log(problemData))
-
-    // console.log(problemData)
-
-
-    // let problemTitle = arrayOfProblems.filter(problem => problem.title)
-    // console.log('Problem Title', problemTitle)
-
-    // console.log(problemData)
+        console.log(problemData)
+    }, [problemData])
 
     // REMINDER: Need to create state variable and set function
     // to capture and save data from view click in order to
-    // pass that data to the page using props
+    // pass that data or display it
 
     // function handleView(event){
     //     event.preventDefault()
@@ -31,13 +25,19 @@ const ProblemCard = ({problems}) => {
     // }
 
     function problemCardData(){
+        // debugger
         return (
             <div className="wrapper">
                 {/* <h1>Collection Page</h1> */}
                 {problems.map((problem) => {
                     return (
-                        // <Link to={`/problem/${problems.id}`} key={problem.id} style={{ textDecoration: "none", color: "black" }}>
-                            <div className="card" key={problem.id}>
+                        <Link to={{
+                            // pathname: "/problem",
+                            state: problemData // my problem data
+                            }} key={problem.id} 
+                            style={{ textDecoration: "none", color: "black" }}
+                            >
+                            <div className="card">
                                 <div className="card_body">
                                     {/* Reminder: remove img src element */}
                                     <img src="images/math-equation.jpg" className='card_image'/>
@@ -46,7 +46,7 @@ const ProblemCard = ({problems}) => {
                                 </div>
                                 <button className="card_btn" onClick={() => setProblemData(problem)}>View</button>
                             </div>
-                        // </Link>
+                        </Link>
                     )
                 })}
             </div>
@@ -56,6 +56,10 @@ const ProblemCard = ({problems}) => {
     return (
         <>
             {problemCardData()}
+            {/* <Routes>
+                <Route path="/problem" element={<ProblemPage problemData={problemData}/>}/>
+            </Routes> */}
+            {/* <ProblemDislpay /> */}
         </>
         // <div className="wrapper">
         //     {problems.map((problem) => {

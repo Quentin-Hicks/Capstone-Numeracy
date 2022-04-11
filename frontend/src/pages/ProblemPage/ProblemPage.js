@@ -3,18 +3,24 @@ import ProblemDislpay from "../../components/ProblemDisplay/ProblemDisplay";
 import React from "react";
 import { useEffect, useState } from "react";
 
-const ProblemPage = ({problems}) => {
+const ProblemPage = (problemData) => {
 
+    // console.log(problemData)
 
-    // let arrayProblems = problems.map(problem => {
-    //     return problem
-    // })
-    // console.log(arrayProblems)
+    const problemDetails = () => {
+
+        // props.problemData({
+        //     title: title,
+        //     content: content,
+        //     hints: hints,
+        //     resources: resources,
+        //     answer: answer,
+        // })
+}
     
     return (
         <>
             <h1>Problem Page</h1>
-            {/* <ProblemDislpay /> */}
         </>
     )
 }
