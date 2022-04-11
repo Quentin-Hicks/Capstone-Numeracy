@@ -25,7 +25,7 @@ import CapstoneHomePage from "./pages/CapstoneHomePage/CapstoneHomePage";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 
-export default function App() {
+function App() {
 
   // debugger
 
@@ -44,17 +44,7 @@ export default function App() {
   return (
     <div>
       {/* <CapstoneNavBar /> */}
-      <h1>Bookkeeper!</h1>
-      <nav
-        style={{
-          borderBottom: "solid 1px",
-          paddingBottom: "1rem",
-        }}
-      >
-        <Link to="/invoices">Invoices</Link> |{" "}
-        <Link to="/expenses">Expenses</Link>
-      </nav>
-      <Outlet />
+      
       
        {/* <Routes> */}
           {/* <Route path="/" element={<CapstoneHomePage />} /> */}
@@ -79,4 +69,4 @@ export default function App() {
   );
 }
 
-// export default App
+export default App
