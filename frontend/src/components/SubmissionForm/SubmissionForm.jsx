@@ -12,12 +12,27 @@ const SubmissionForm = (props) => {
     function handleSubmit(event){
         event.preventDefault()
         // this keeps the page from refreshing
+        let newSubmission = {
+            // this is the area where we stage our data together
+            // before sending off to app.js in our function call
+            title: title,
+            content: content,
+            hints: hints,
+            answer: answer,
+            resources: resources
+        }
+        console.log(newSubmission)
+
+        props.addNewSubmission(newSubmission)  
+        // here we call our function we passed down as props, 
+        // it will take our newEntry value and pass it into our 
+        // function in app.js
     }
 
     return (
         <>
             <h3>Submit A Math Problem</h3>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="form-grid">
                 <div className='form-grid'>
                     <label>Title</label>
                     <input type='text' className='form-control' value={title} onChange={(event) => setTitle(event.target.value)} placeholder='Enter title...'/>
