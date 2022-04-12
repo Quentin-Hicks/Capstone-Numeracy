@@ -1,7 +1,7 @@
 import "./SubmissionForm.css"
 import React, { useState } from 'react';
 
-const SubmissionForm = (props) => {
+const SubmissionForm = ({createProblem}) => {
 
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
@@ -22,8 +22,7 @@ const SubmissionForm = (props) => {
             resources: resources
         }
         console.log(newSubmission)
-
-        props.addNewSubmission(newSubmission)  
+        createProblem(newSubmission)  
         // here we call our function we passed down as props, 
         // it will take our newEntry value and pass it into our 
         // function in app.js

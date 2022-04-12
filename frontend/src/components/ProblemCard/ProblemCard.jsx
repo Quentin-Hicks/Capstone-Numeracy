@@ -12,7 +12,7 @@ const ProblemCard = ({problems}) => {
     const [problemData, setProblemData] = useState()
 
     useEffect(() => {
-        // console.log(problemData)
+        console.log(problemData)
     }, [problemData])
 
     // Use useParams to grab the id of the problem data relative

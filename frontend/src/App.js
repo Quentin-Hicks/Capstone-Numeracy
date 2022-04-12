@@ -36,11 +36,20 @@ function App() {
         getAllProblems();
     }, [])
 
+    console.log(problems)
+
     async function getAllProblems(){
         let response = await axios.get('http://127.0.0.1:8000/api/problems/');
         // console.log(response.data)
         setProblems(response.data);
-  }
+    }
+    
+    async function createProblem(newProblem){
+      let response = await axios.post('http://127.0.0.1:8000/api/problems/', newProblem)
+      console.log(response.data)
+      await getAllProblems()
+    }
+
 
   return (
         <div> 
@@ -50,9 +59,10 @@ function App() {
             <Route path="collection" element={<CollectionPage problems= {problems}/>} />
             {/* Reminder: need backticks for ProblemPage, `/problem/${problems.title}` */}
             <Route path="problem" />
-            <Route path="submission" element={<SubmmissionPage />} />
+            <Route path="submission" element={<SubmmissionPage createProblem={createProblem}/>}/>
+            {/* passing in our function so we can pull data to this level and save it */}
             
-          <Route
+          {/* <Route
             path="/"
             element={
               <PrivateRoute>
@@ -61,7 +71,7 @@ function App() {
             }
           />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage />} /> */}
         </Routes>
         <Footer />
       </div>

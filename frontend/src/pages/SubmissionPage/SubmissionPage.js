@@ -4,13 +4,13 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const SubmissionPage = () => {
+const SubmissionPage = ({createProblem}) => {
 
 
     return (
         <>
             <h1>Submission Page</h1>
-            <SubmissionForm />
+            <SubmissionForm createProblem={createProblem}/>
         </>
     )
 }
