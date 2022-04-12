@@ -19,7 +19,6 @@ import Navbar from "./components/NavBar/NavBar";
 import CapstoneNavBar from "./components/CapstoneNavBar/CapstoneNavBar";
 import Footer from "./components/Footer/Footer";
 import ProblemCard from "./components/ProblemCard/ProblemCard"
-import ProblemDisplay from "./components/ProblemDisplay/ProblemDisplay"
 import SubmissionForm from "./components/SubmissionForm/SubmissionForm"
 
 

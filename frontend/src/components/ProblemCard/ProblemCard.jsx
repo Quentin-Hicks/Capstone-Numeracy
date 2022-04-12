@@ -1,8 +1,5 @@
 import "./ProblemCard.css"
-// REMINDER: May need to import display component
-// to pass down state variable
 import { Routes, Route } from "react-router-dom";
-import ProblemDislpay from "../ProblemDisplay/ProblemDisplay";
 import ProblemPage from "../../pages/ProblemPage/ProblemPage";
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";

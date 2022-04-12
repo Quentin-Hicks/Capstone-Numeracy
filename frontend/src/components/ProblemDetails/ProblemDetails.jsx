@@ -1,17 +1,17 @@
-import "./ProblemDisplay.css"
+import "./ProblemDetails.css"
 import ProblemCard from "../ProblemCard/ProblemCard";
 import React, { useState, useEffect } from 'react';
 
-const ProblemDislpay = (props) => {
+const ProblemDetails = (props) => {
 
     const [problem, setProblem] = useState()
 
     return (
         <>
-            <h3>Problems</h3>
+            {/* <h3>Problems</h3> */}
             
         </>
     )
 }
 
-export default ProblemDislpay
+export default ProblemDetails
