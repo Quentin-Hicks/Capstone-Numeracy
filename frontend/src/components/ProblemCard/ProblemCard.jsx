@@ -12,7 +12,7 @@ const ProblemCard = ({problems}) => {
     const [problemData, setProblemData] = useState()
 
     useEffect(() => {
-        console.log(problemData)
+        // console.log(problemData)
     }, [problemData])
 
     // Use useParams to grab the id of the problem data relative
@@ -34,10 +34,7 @@ const ProblemCard = ({problems}) => {
                 {/* <h1>Collection Page</h1> */}
                 {problems.map((problem) => {
                     return (
-                        <Link to={{
-                            // pathname: "/problem",
-                            state: problemData // my problem data
-                            }} key={problem.id} 
+                        <Link to={`/problem/${problem.id}`} key={problem.id} 
                             style={{ textDecoration: "none", color: "black" }}
                             >
                             <div className="card">

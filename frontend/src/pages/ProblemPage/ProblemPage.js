@@ -1,22 +1,22 @@
 import "./ProblemPage.css"
 import ProblemDislpay from "../../components/ProblemDisplay/ProblemDisplay";
 import React from "react";
-import { Link } from "react-router-dom"
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-const ProblemPage = () => {
+const ProblemPage = ({problems}) => {
 
-    // console.log(problemData)
+    const {id} = useParams()
 
-    // const problemDetails = () => {
+    console.log(id)
 
-    // }
-
+    let filteredProblem = problems.filter(problem => problem.id == id)
+    console.log(filteredProblem)
 
     return (
-        <div>
-            
-        </div>
+        <h2>
+            Id is = { id }
+        </h2>
     )
 }
 

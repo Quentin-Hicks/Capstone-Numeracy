@@ -36,7 +36,7 @@ function App() {
         getAllProblems();
     }, [])
 
-    console.log(problems)
+    // console.log(problems)
 
     async function getAllProblems(){
         let response = await axios.get('http://127.0.0.1:8000/api/problems/');
@@ -46,10 +46,9 @@ function App() {
     
     async function createProblem(newProblem){
       let response = await axios.post('http://127.0.0.1:8000/api/problems/', newProblem)
-      console.log(response.data)
+      // console.log(response.data)
       await getAllProblems()
     }
-
 
   return (
         <div> 
@@ -58,9 +57,9 @@ function App() {
             <Route path="/" element={<CapstoneHomePage />} />
             <Route path="collection" element={<CollectionPage problems= {problems}/>} />
             {/* Reminder: need backticks for ProblemPage, `/problem/${problems.title}` */}
-            <Route path="problem" />
             <Route path="submission" element={<SubmmissionPage createProblem={createProblem}/>}/>
             {/* passing in our function so we can pull data to this level and save it */}
+            <Route path={`/problem/:id`} element={<ProblemPage problems= {problems}/>} />
             
           {/* <Route
             path="/"
