@@ -1,27 +1,22 @@
 import "./ProblemPage.css"
 import ProblemDislpay from "../../components/ProblemDisplay/ProblemDisplay";
 import React from "react";
+import { Link } from "react-router-dom"
 import { useEffect, useState } from "react";
 
-const ProblemPage = (problemData) => {
+const ProblemPage = () => {
 
     // console.log(problemData)
 
-    const problemDetails = () => {
+    // const problemDetails = () => {
 
-        // props.problemData({
-        //     title: title,
-        //     content: content,
-        //     hints: hints,
-        //     resources: resources,
-        //     answer: answer,
-        // })
-}
-    
+    // }
+
+
     return (
-        <>
-            <h1>Problem Page</h1>
-        </>
+        <div>
+            
+        </div>
     )
 }
 

@@ -1,8 +1,7 @@
 // General Imports
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import { Link, Outlet } from "react-router-dom";
-import { render } from "react-dom"
 import axios from "axios"
 import "./App.css";
 
@@ -13,6 +12,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import CollectionPage from "./pages/CollectionPage/CollectionPage"
 import ProblemPage from "./pages/ProblemPage/ProblemPage"
 import SubmmissionPage from "./pages/SubmissionPage/SubmissionPage"
+import CapstoneHomePage from "./pages/CapstoneHomePage/CapstoneHomePage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -21,12 +21,7 @@ import Footer from "./components/Footer/Footer";
 import ProblemCard from "./components/ProblemCard/ProblemCard"
 import ProblemDisplay from "./components/ProblemDisplay/ProblemDisplay"
 import SubmissionForm from "./components/SubmissionForm/SubmissionForm"
-import CapstoneHomePage from "./pages/CapstoneHomePage/CapstoneHomePage";
 
-// Example Code via React Router Documentation
-import Main from "./Main.jsx";
-import Expenses from "./routes/expenses"
-import Invoices from "./routes/invoices";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
@@ -35,49 +30,42 @@ function App() {
 
   // debugger
 
-  // const [problems, setProblems] = useState([])
+  const [problems, setProblems] = useState([])
 
-  //   useEffect(()=> {
-  //       getAllProblems();
-  //   }, [])
+    useEffect(()=> {
+        getAllProblems();
+    }, [])
 
-  //   async function getAllProblems(){
-  //       let response = await axios.get('http://127.0.0.1:8000/api/problems/');
-  //       // console.log(response.data)
-  //       setProblems(response.data);
-  // }
+    async function getAllProblems(){
+        let response = await axios.get('http://127.0.0.1:8000/api/problems/');
+        // console.log(response.data)
+        setProblems(response.data);
+  }
 
   return (
-    <BrowserRouter>
-      <div>
-          <Main />
-      </div>
-    </BrowserRouter>
-  )
-  // // return (
-  //       {/* <div> */}
-  //       {/* <CapstoneNavBar /> */}
-  //       {/* <Routes> */}
-  //           {/* <Route path="/" element={<CapstoneHomePage />} /> */}
-  //           {/* <Route path="collection" element={<CollectionPage problems= {problems}/>} /> */}
-  //           {/* Reminder: need backticks for ProblemPage, `/problem/${problems.title}` */}
-  //           {/* <Route path="problem" /> */}
-  //           {/* <Route path="submission" element={<SubmmissionPage />} /> */}
+        <div> 
+        <CapstoneNavBar />
+        <Routes>
+            <Route path="/" element={<CapstoneHomePage />} />
+            <Route path="collection" element={<CollectionPage problems= {problems}/>} />
+            {/* Reminder: need backticks for ProblemPage, `/problem/${problems.title}` */}
+            <Route path="problem" />
+            <Route path="submission" element={<SubmmissionPage />} />
             
-  //         {/* <Route
-  //           path="/"
-  //           element={
-  //             <PrivateRoute>
-  //               <HomePage />
-  //             </PrivateRoute>
-  //           }
-  //         />
-  //         <Route path="/register" element={<RegisterPage />} />
-  //         <Route path="/login" element={<LoginPage />} /> */}
-  //       {/* </Routes> */}
-  //       {/* <Footer /> */}
-  //     {/* </div> */}
-  // // )
+          <Route
+            path="/"
+            element={
+              <PrivateRoute>
+                <HomePage />
+              </PrivateRoute>
+            }
+          />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+        <Footer />
+      </div>
+  )
 }
 
 export default App

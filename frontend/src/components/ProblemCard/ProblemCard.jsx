@@ -12,12 +12,15 @@ const ProblemCard = ({problems}) => {
     const [problemData, setProblemData] = useState()
 
     useEffect(() => {
-        console.log(problemData)
+        // console.log(problemData)
     }, [problemData])
 
-    // REMINDER: Need to create state variable and set function
-    // to capture and save data from view click in order to
-    // pass that data or display it
+    // Use useParams to grab the id of the problem data relative
+    // to the card being clicked. Then pass that data to the
+    // problem page somehow.
+    // Get that page to match that data to the backend and bring the
+    // data back. Essentially, you may not need to pass the problem
+    // data, just match it to grab it.
 
     // function handleView(event){
     //     event.preventDefault()
