@@ -13,6 +13,8 @@ const ProblemDetails = (props) => {
     const {id} = useParams()
 
     const [activeProblem, setActiveProblem] = useState({})
+    const [showHint, setShowHint] = useState(false)
+    const [showAnswer, setShowAnsewr] = useState(false)
 
     async function getProblemById(problemID){
       let response = await axios.get(`http://127.0.0.1:8000/api/problems/${problemID}/`)
@@ -25,11 +27,19 @@ const ProblemDetails = (props) => {
            <h1>Here's a problem</h1>
            <p>{activeProblem.title}</p>
            <p>{activeProblem.content}</p>
-           <p>Hint: {activeProblem.hints}</p>
+           <button onClick={() => setShowHint(!showHint)}>Hint</button>
            <div>
-            <p>Resources: {activeProblem.resources}</p>
+               {
+                   showHint?<p>{activeProblem.hints}</p>:null
+               }
            </div>
-           <p>{activeProblem.answer}</p>
+           <p>Resources: {activeProblem.resources}</p>
+           <button onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
+           <div>
+               {
+                   showAnswer?<p>{activeProblem.hints}</p>:null
+               }
+           </div>
         </div>
     )
 }
