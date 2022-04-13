@@ -6,7 +6,6 @@ import axios from "axios"
 
 const ProblemDetails = (props) => {
 
-    
     useEffect(()=>{
         getProblemById(id)
     }, [])
@@ -21,13 +20,16 @@ const ProblemDetails = (props) => {
       setActiveProblem(response.data)
     }
 
-
-
     return (
         <div>
            <h1>Here's a problem</h1>
            <p>{activeProblem.title}</p>
-            
+           <p>{activeProblem.content}</p>
+           <p>Hint: {activeProblem.hints}</p>
+           <div>
+            <p>Resources: {activeProblem.resources}</p>
+           </div>
+           <p>{activeProblem.answer}</p>
         </div>
     )
 }
