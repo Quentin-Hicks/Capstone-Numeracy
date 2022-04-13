@@ -5,3 +5,6 @@ class ProblemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Problem
         fields = ['id', 'title', 'content', 'hints', 'answer', 'resources']
+        # depth = 1
+
+    # problem_id = serializers.IntegerField(write_only=True)

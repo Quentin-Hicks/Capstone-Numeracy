@@ -1,28 +1,20 @@
 import "./ProblemPage.css"
-
+import ProblemDetails from "../../components/ProblemDetails/ProblemDetails";
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const ProblemPage = ({problems}) => {
+const ProblemPage = (props) => {
 
-    const {id} = useParams()
-
-    console.log(id)
-
-    let filteredProblem = problems.filter(problem => problem.id == id)
-    console.log(filteredProblem)
-
-    
 
     return (
-        <>
-        <h2>
-            Id is = { id }
-        </h2>
-        {/* <ProblemDetails /> */}
-        </>
+        <div>
+    
+            <ProblemDetails />
+        </div>
     )
+
 }
+
 
 export default ProblemPage

@@ -30,6 +30,7 @@ function App() {
   // debugger
 
   const [problems, setProblems] = useState([])
+  const [getProblem, setGetProblem] = useState([])
 
     useEffect(()=> {
         getAllProblems();
@@ -49,16 +50,19 @@ function App() {
       await getAllProblems()
     }
 
+    
+  
+
   return (
         <div> 
         <CapstoneNavBar />
         <Routes>
             <Route path="/" element={<CapstoneHomePage />} />
-            <Route path="collection" element={<CollectionPage problems= {problems}/>} />
+            <Route path="collection" element={<CollectionPage problems={problems}/>} />
             {/* Reminder: need backticks for ProblemPage, `/problem/${problems.title}` */}
             <Route path="submission" element={<SubmmissionPage createProblem={createProblem}/>}/>
             {/* passing in our function so we can pull data to this level and save it */}
-            <Route path={`/problem/:id`} element={<ProblemPage problems= {problems}/>} />
+            <Route path={`/problem/:id`} element={<ProblemPage problems={problems}/>} />
             
           {/* <Route
             path="/"

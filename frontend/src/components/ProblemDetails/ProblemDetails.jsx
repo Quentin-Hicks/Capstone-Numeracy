@@ -1,16 +1,34 @@
 import "./ProblemDetails.css"
-import ProblemCard from "../ProblemCard/ProblemCard";
 import React, { useState, useEffect } from 'react';
+import { useParams } from "react-router-dom";
+import axios from "axios"
+
 
 const ProblemDetails = (props) => {
 
-    const [problem, setProblem] = useState()
+    
+    useEffect(()=>{
+        getProblemById(id)
+    }, [])
+
+    const {id} = useParams()
+
+    const [activeProblem, setActiveProblem] = useState({})
+
+    async function getProblemById(problemID){
+      let response = await axios.get(`http://127.0.0.1:8000/api/problems/${problemID}/`)
+      console.log(response.data)
+      setActiveProblem(response.data)
+    }
+
+
 
     return (
-        <>
-            {/* <h3>Problems</h3> */}
+        <div>
+           <h1>Here's a problem</h1>
+           <p>{activeProblem.title}</p>
             
-        </>
+        </div>
     )
 }
 
