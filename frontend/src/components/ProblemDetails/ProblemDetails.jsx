@@ -6,15 +6,19 @@ import axios from "axios"
 
 const ProblemDetails = (props) => {
 
-    useEffect(()=>{
-        getProblemById(id)
-    }, [])
-
     const {id} = useParams()
 
     const [activeProblem, setActiveProblem] = useState({})
     const [showHint, setShowHint] = useState(false)
     const [showAnswer, setShowAnsewr] = useState(false)
+
+    useEffect(()=>{
+        getProblemById(id)
+    }, [])
+
+    function handleSubmit(event){
+        event.preventDefault()
+    }
 
     async function getProblemById(problemID){
       let response = await axios.get(`http://127.0.0.1:8000/api/problems/${problemID}/`)
@@ -34,6 +38,12 @@ const ProblemDetails = (props) => {
                }
            </div>
            <p>Resources: {activeProblem.resources}</p>
+           <form onSubmit={handleSubmit}>
+               <div>
+                   <input />
+                   <button type="submit">Submit Answer</button>
+               </div>
+           </form>
            <button onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
            <div>
                {
