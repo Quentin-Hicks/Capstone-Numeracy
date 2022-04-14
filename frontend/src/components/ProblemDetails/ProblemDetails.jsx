@@ -38,32 +38,33 @@ const ProblemDetails = (props) => {
         console.log(userInput)
         if(userInput == activeProblem.answer){
             console.log('correct')
-            notify()
+            correctAnswer()
             // let correctAnswer = userInput
             // return correctAnswer
         } else {
             console.log('not correct')
+            wrongAnswer()
         }
         // console.log(xtype(activeProblem.answer, 10))
         // console.log(xtype(userInput, 10))
     }
 
-    // const CustomToast = ({closeToast}) => {
-    //     return (
-    //         <div>
-    //             Something went wrong
-    //             <button onClick={closeToast}>Close</button>
-    //         </div>
-    //     )
-    // }
-
     // debugger
-    function notify() {
+
+    function correctAnswer() {
         toast.success('Correct!', {
             position: toast.POSITION.TOP_RIGHT,
             autoclose: 5000
         })
     }
+
+    function wrongAnswer() {
+        toast.error('Wrong, please try again...', {
+            position: toast.POSITION.TOP_RIGHT,
+            autoclose: 5000
+        })
+    }
+
     return (
         <div>
            <h1>Here's a problem</h1>
