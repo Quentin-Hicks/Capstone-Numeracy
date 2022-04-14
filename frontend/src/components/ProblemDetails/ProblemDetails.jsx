@@ -2,6 +2,7 @@ import "./ProblemDetails.css"
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import axios from "axios"
+import xtype from "xtypejs"
 
 
 const ProblemDetails = (props) => {
@@ -18,24 +19,32 @@ const ProblemDetails = (props) => {
         // console.log(userAnswer)
     }, [])
 
+    async function getProblemById(problemID){
+        let response = await axios.get(`http://127.0.0.1:8000/api/problems/${problemID}/`)
+        console.log(response.data)
+        setActiveProblem(response.data)
+      }
+
     function handleSubmit(event){
         event.preventDefault()
+        // console.log(userInput)
+        isCorrect()
+    }
+
+    function isCorrect(){
+        console.log('math')
+        console.log(activeProblem.answer)
         console.log(userInput)
+        if(userInput == activeProblem.answer){
+            console.log('correct')
+            // let correctAnswer = userInput
+            // return correctAnswer
+        } else {
+            console.log('not correct')
+        }
+        // console.log(xtype(activeProblem.answer, 10))
+        // console.log(xtype(userInput, 10))
     }
-
-    async function getProblemById(problemID){
-      let response = await axios.get(`http://127.0.0.1:8000/api/problems/${problemID}/`)
-      console.log(response.data)
-      setActiveProblem(response.data)
-    }
-
-    // let correctAnswer = activeProblem.answer
-    // console.log(correctAnswer)
-
-    // function getAnswer(a){
-    //     setUserAnswer(a.target.value)
-    //     console.warn(a.target.value)
-    // }
 
     // debugger
 
