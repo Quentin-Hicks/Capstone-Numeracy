@@ -22,7 +22,7 @@ const SubmissionForm = ({createProblem}) => {
             resources: resources
         }
         console.log(newSubmission)
-        createProblem(newSubmission)  
+        // createProblem(newSubmission)  
         // here we call our function we passed down as props, 
         // it will take our newSubmission value and pass it into our 
         // function in app.js
