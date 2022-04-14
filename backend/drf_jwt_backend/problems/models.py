@@ -7,3 +7,4 @@ class Problem(models.Model):
     hints = models.CharField(max_length=255)
     answer = models.DecimalField(max_digits=24, decimal_places=2)
     resources = models.TextField()
+    live_status = models.BooleanField(default=False)

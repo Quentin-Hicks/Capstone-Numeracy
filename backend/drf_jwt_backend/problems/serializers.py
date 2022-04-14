@@ -4,7 +4,7 @@ from .models import Problem
 class ProblemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Problem
-        fields = ['id', 'title', 'content', 'hints', 'answer', 'resources']
+        fields = ['id', 'title', 'content', 'hints', 'answer', 'resources', 'live_status']
         # depth = 1
 
     # problem_id = serializers.IntegerField(write_only=True)
