@@ -2,7 +2,6 @@ import "./ProblemDetails.css"
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import axios from "axios"
-import xtype from "xtypejs"
 import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -45,12 +44,10 @@ const ProblemDetails = (props) => {
             console.log('not correct')
             wrongAnswer()
         }
-        // console.log(xtype(activeProblem.answer, 10))
-        // console.log(xtype(userInput, 10))
     }
 
-    // debugger
 
+    // debugger
     function correctAnswer() {
         toast.success('Correct!', {
             position: toast.POSITION.TOP_RIGHT,
