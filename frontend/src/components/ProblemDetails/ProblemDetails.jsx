@@ -11,13 +11,16 @@ const ProblemDetails = (props) => {
     const [activeProblem, setActiveProblem] = useState({})
     const [showHint, setShowHint] = useState(false)
     const [showAnswer, setShowAnsewr] = useState(false)
+    const [userInput, setUserInput] = useState('')
 
     useEffect(()=>{
         getProblemById(id)
+        // console.log(userAnswer)
     }, [])
 
     function handleSubmit(event){
         event.preventDefault()
+        console.log(userInput)
     }
 
     async function getProblemById(problemID){
@@ -25,6 +28,16 @@ const ProblemDetails = (props) => {
       console.log(response.data)
       setActiveProblem(response.data)
     }
+
+    // let correctAnswer = activeProblem.answer
+    // console.log(correctAnswer)
+
+    // function getAnswer(a){
+    //     setUserAnswer(a.target.value)
+    //     console.warn(a.target.value)
+    // }
+
+    // debugger
 
     return (
         <div>
@@ -40,14 +53,15 @@ const ProblemDetails = (props) => {
            <p>Resources: {activeProblem.resources}</p>
            <form onSubmit={handleSubmit}>
                <div>
-                   <input />
+                   {/* <h3></h3> */}
+                   <input type="text" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
                    <button type="submit">Submit Answer</button>
                </div>
            </form>
            <button onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
            <div>
                {
-                   showAnswer?<p>{activeProblem.hints}</p>:null
+                   showAnswer?<p>{activeProblem.answer}</p>:null
                }
            </div>
         </div>

@@ -24,7 +24,7 @@ const SubmissionForm = ({createProblem}) => {
         console.log(newSubmission)
         createProblem(newSubmission)  
         // here we call our function we passed down as props, 
-        // it will take our newEntry value and pass it into our 
+        // it will take our newSubmission value and pass it into our 
         // function in app.js
     }
 

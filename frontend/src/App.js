@@ -30,7 +30,7 @@ function App() {
   // debugger
 
   const [problems, setProblems] = useState([])
-  const [getProblem, setGetProblem] = useState([])
+  // const [getProblem, setGetProblem] = useState([])
 
     useEffect(()=> {
         getAllProblems();
@@ -49,9 +49,6 @@ function App() {
       // console.log(response.data)
       await getAllProblems()
     }
-
-    
-  
 
   return (
         <div> 
