@@ -6,7 +6,7 @@ import xtype from "xtypejs"
 import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-
+toast.configure()
 const ProblemDetails = (props) => {
 
     const {id} = useParams()
@@ -38,6 +38,7 @@ const ProblemDetails = (props) => {
         console.log(userInput)
         if(userInput == activeProblem.answer){
             console.log('correct')
+            notify()
             // let correctAnswer = userInput
             // return correctAnswer
         } else {
@@ -47,8 +48,22 @@ const ProblemDetails = (props) => {
         // console.log(xtype(userInput, 10))
     }
 
-    // debugger
+    // const CustomToast = ({closeToast}) => {
+    //     return (
+    //         <div>
+    //             Something went wrong
+    //             <button onClick={closeToast}>Close</button>
+    //         </div>
+    //     )
+    // }
 
+    // debugger
+    function notify() {
+        toast.success('Correct!', {
+            position: toast.POSITION.TOP_RIGHT,
+            autoclose: 5000
+        })
+    }
     return (
         <div>
            <h1>Here's a problem</h1>
