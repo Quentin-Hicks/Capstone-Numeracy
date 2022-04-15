@@ -10,19 +10,25 @@ const CapstoneHomePage = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
+
         <div>
-            <h1>What's your Modal?</h1>
-            <div className='button_wrap' onClick={() => console.log('clicked')}>
-                <h3>Hello Modal</h3>
-                <button onClick={() => setIsOpen(true)}>Show Modal</button>
 
-                <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                    Modal Disaster
-                </Modal>
-
-                <div className='other'>Other Content</div>
-            </div>
         </div>
+
+        // NOTE: Do not erase Modal code below!!!!!
+        // <div>
+        //     <h1>What's your Modal?</h1>
+        //     <div className='button_wrap' onClick={() => console.log('clicked')}>
+        //         <h3>Hello Modal</h3>
+        //         <button onClick={() => setIsOpen(true)}>Show Modal</button>
+
+        //         <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+        //             Modal Disaster
+        //         </Modal>
+
+        //         <div className='other'>Other Content</div>
+        //     </div>
+        // </div>
     )
 }
 
