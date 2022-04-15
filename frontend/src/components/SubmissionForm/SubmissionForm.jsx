@@ -1,4 +1,5 @@
 import "./SubmissionForm.css"
+import ReviewProblemPage from "../../pages/ReviewProblemPage/ReviewProblemPage";
 import React, { useState } from 'react';
 
 const SubmissionForm = ({createProblem}) => {
@@ -21,8 +22,9 @@ const SubmissionForm = ({createProblem}) => {
             answer: answer,
             resources: resources
         }
+
         console.log(newSubmission)
-        // createProblem(newSubmission)  
+        createProblem(newSubmission)  
         // here we call our function we passed down as props, 
         // it will take our newSubmission value and pass it into our 
         // function in app.js
@@ -32,6 +34,9 @@ const SubmissionForm = ({createProblem}) => {
         <>
             <h3>Submit A Math Problem</h3>
             <form onSubmit={handleSubmit} className="form-grid">
+                <div>
+                    <p></p>
+                </div>
                 <div className='form-grid'>
                     <label>Title</label>
                     <input type='text' className='form-control' value={title} onChange={(event) => setTitle(event.target.value)} placeholder='Enter title...'/>

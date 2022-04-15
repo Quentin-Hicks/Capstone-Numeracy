@@ -13,6 +13,7 @@ import CollectionPage from "./pages/CollectionPage/CollectionPage"
 import ProblemPage from "./pages/ProblemPage/ProblemPage"
 import SubmmissionPage from "./pages/SubmissionPage/SubmissionPage"
 import CapstoneHomePage from "./pages/CapstoneHomePage/CapstoneHomePage";
+import ReviewProblemPage from "./pages/ReviewProblemPage/ReviewProblemPage"
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -43,11 +44,11 @@ function App() {
         // console.log(response.data)
         setProblems(response.data);
     }
-    
+
     async function createProblem(newProblem){
       let response = await axios.post('http://127.0.0.1:8000/api/problems/', newProblem)
       // console.log(response.data)
-      await getAllProblems()
+      // await getAllProblems()
     }
 
   return (
@@ -60,6 +61,7 @@ function App() {
             <Route path="submission" element={<SubmmissionPage createProblem={createProblem}/>}/>
             {/* passing in our function so we can pull data to this level and save it */}
             <Route path={`/problem/:id`} element={<ProblemPage problems={problems}/>} />
+            <Route path={"review"} element={<ReviewProblemPage />}/>
             
           {/* <Route
             path="/"
