@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Modal.css'
+import ReactDOM from 'react-dom'
 
 const Modal = ({open, children, onClose}) => {
 
@@ -27,14 +28,15 @@ const Modal = ({open, children, onClose}) => {
     zIndex: 1000
   }
   
-  return (
+  return ReactDOM.createPortal(
     <>  
         <div style={OVERLAY_STYLE} />
         <div style={MODAL_STYLES}>
             <button onClick={onClose}>Close Modal</button>
             {children}
         </div>
-    </>
+    </>,
+    document.getElementById('portal')
   )
 }
 
