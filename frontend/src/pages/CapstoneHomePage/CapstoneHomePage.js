@@ -45,7 +45,7 @@ const CapstoneHomePage = () => {
         // NOTE: Do not erase Modal code below!!!!!
         <div>
             <h1>What's your Modal?</h1>
-            <div className='button_wrap' onClick={() => console.log('clicked')}>
+            {/* <div className='button_wrap' onClick={() => console.log('clicked')}>
                 <h3>Hello Modal</h3>
                 <button onClick={() => setIsOpen(true)}>Show Modal</button>
 
@@ -54,7 +54,7 @@ const CapstoneHomePage = () => {
                 </Modal>
 
                 <div className='other'>Other Content</div>
-            </div>
+            </div> */}
         </div>
     )
 }

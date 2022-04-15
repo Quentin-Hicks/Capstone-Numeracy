@@ -6,11 +6,12 @@ const ProblemsToReview = ({submittedProblems}) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
+    const [title, setTitle] = useState('')
+    const [content, setContent] = useState('')
+    const [answer, setAnswer] = useState('')
+
     // console.log(submittedProblems)
 
-    function problemInReview(problem){
-        console.log(problem)
-    }
 
     function problemCardData(){
         return (
@@ -18,14 +19,14 @@ const ProblemsToReview = ({submittedProblems}) => {
                 {/* <h1>Collection Page</h1> */}
                 {submittedProblems.map((problem) => {
                     return (
-                        <div className="card" key={problem.id} onClick={() => problemInReview(problem)}>
+                        <div className="card" key={problem.id} onClick={() => [setTitle(problem.title), setContent(problem.content), setAnswer(problem.answer)]}>
                             <div className="card_body">
                                 {/* Reminder: remove img src element */}
                                 {/* <img src="images/math-equation.jpg" className='card_image'/> */}
                                 <h2 className="card_title">{problem.title}</h2>
                                 <b className="card_details">{problem.content}</b>
                             </div>
-                            <button onClick={() => setIsOpen(true)}className="card_btn">View</button>
+                            <button onClick={() => setIsOpen(true)} className="card_btn">View</button>
                         </div>
                     )
                 })}
@@ -40,7 +41,9 @@ const ProblemsToReview = ({submittedProblems}) => {
             <Modal open={isOpen} onClose={() => setIsOpen(false)}>
                 Modal Disaster
                 <b>Example Text In Modal</b>
-                <textarea></textarea>
+                <p>{title}</p>
+                <p>{content}</p>
+                <p>{answer}</p>
             </Modal>
         </div>
 
