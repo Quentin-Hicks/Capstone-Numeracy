@@ -8,9 +8,26 @@ const ProblemsToReview = ({submittedProblems}) => {
 
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
+    const [hints, setHints] = useState('')
+    const [resources, setResources] = useState('')
     const [answer, setAnswer] = useState('')
+    const [liveStatus, setLiveStatus] = useState()
 
-    // console.log(submittedProblems)
+    function handleView(e){
+        e.preventDefault()
+        
+    }
+
+    function problemInReview(title, content, hints, resources, answer, liveStatus){
+        setTitle(title)
+        setContent(content)
+        setHints(hints)
+        setResources(resources)
+        setAnswer(answer)
+        setLiveStatus(liveStatus)
+    }
+
+    console.log(submittedProblems)
 
 
     function problemCardData(){
@@ -19,7 +36,15 @@ const ProblemsToReview = ({submittedProblems}) => {
                 {/* <h1>Collection Page</h1> */}
                 {submittedProblems.map((problem) => {
                     return (
-                        <div className="card" key={problem.id} onClick={() => [setTitle(problem.title), setContent(problem.content), setAnswer(problem.answer)]}>
+                        <div className="card" key={problem.id} 
+                        onClick={() => problemInReview(
+                            problem.title,
+                            problem.content,
+                            problem.hints,
+                            problem.resources,
+                            problem.answer,
+                            problem.liveStatus
+                        )}>
                             <div className="card_body">
                                 {/* Reminder: remove img src element */}
                                 {/* <img src="images/math-equation.jpg" className='card_image'/> */}
@@ -43,7 +68,10 @@ const ProblemsToReview = ({submittedProblems}) => {
                 <b>Example Text In Modal</b>
                 <p>{title}</p>
                 <p>{content}</p>
+                <p>{hints}</p>
+                <p>{resources}</p>
                 <p>{answer}</p>
+                <p>{liveStatus}</p>
             </Modal>
         </div>
 
