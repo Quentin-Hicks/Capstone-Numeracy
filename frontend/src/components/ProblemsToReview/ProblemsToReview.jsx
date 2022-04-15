@@ -52,6 +52,7 @@ const ProblemsToReview = ({submittedProblems}) => {
                                 <b className="card_details">{problem.content}</b>
                             </div>
                             <button onClick={() => setIsOpen(true)} className="card_btn">View</button>
+                            <button className="card_btn">Go Live</button>
                         </div>
                     )
                 })}
@@ -64,17 +65,51 @@ const ProblemsToReview = ({submittedProblems}) => {
             {problemCardData()}
 
             <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                <p><input 
-                type="text"
-                required
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                /></p>
-                <p>{content}</p>
-                <p>{hints}</p>
-                <p>{resources}</p>
-                <p>{answer}</p>
-                <p>{liveStatus}</p>
+                <label>Title</label>
+                <p>
+                    <input 
+                        type="text"
+                        required
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    />
+                </p>
+                <label>Title</label>
+                <p>
+                    <input 
+                        type="text"
+                        required
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    />
+                </p>
+                <label>Title</label>
+                <p>
+                    <input 
+                        type="text"
+                        required
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    />
+                </p>
+                <label>Title</label>
+                <p>
+                    <input 
+                        type="text"
+                        required
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    />
+                </p>
+                <label>Title</label>
+                <p>
+                    <input 
+                        type="text"
+                        required
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    />
+                </p>
             </Modal>
         </div>
 
