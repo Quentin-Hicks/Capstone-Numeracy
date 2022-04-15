@@ -1,11 +1,12 @@
 import React from 'react'
 import axios from 'axios'
+import ProblemsToReview from '../../components/ProblemsToReview/ProblemsToReview';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 const ReviewProblemPage = ({problems}) => {
 
-  let problemsToReview = problems.filter(problem => problem.live_status == false)
-  console.log(problemsToReview)
+  let submittedProblems = problems.filter(problem => problem.live_status == false)
+  // console.log(submittedProblems)
 
   async function updateProblem(problemID){
     let response = await axios.put(`http://127.0.0.1:8000/api/problems/${problemID}/`)
@@ -15,6 +16,7 @@ const ReviewProblemPage = ({problems}) => {
   return (
     <div>
         <h1>ReviewProblemPage</h1>
+        <ProblemsToReview submittedProblems={submittedProblems}/>
     </div>
   )
 }
