@@ -18,7 +18,7 @@ const ProblemCard = ({problems}) => {
     // }
 
     let liveProblems = problems.filter(problem => problem.live_status == true)
-    console.log(liveProblems)
+    // console.log(liveProblems)
 
     function problemCardData(){
         return (
