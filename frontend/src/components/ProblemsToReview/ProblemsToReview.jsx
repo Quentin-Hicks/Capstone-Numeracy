@@ -11,12 +11,8 @@ const ProblemsToReview = ({submittedProblems}) => {
     const [hints, setHints] = useState('')
     const [resources, setResources] = useState('')
     const [answer, setAnswer] = useState('')
-    const [liveStatus, setLiveStatus] = useState()
+    const [liveStatus, setLiveStatus] = useState('')
 
-    function handleView(e){
-        e.preventDefault()
-        
-    }
 
     function problemInReview(title, content, hints, resources, answer, liveStatus){
         setTitle(title)
@@ -24,6 +20,10 @@ const ProblemsToReview = ({submittedProblems}) => {
         setHints(hints)
         setResources(resources)
         setAnswer(answer)
+        if(liveStatus == false){
+            liveStatus = 'false'
+            // console.log(liveStatus)
+        }
         setLiveStatus(liveStatus)
     }
 
@@ -43,7 +43,7 @@ const ProblemsToReview = ({submittedProblems}) => {
                             problem.hints,
                             problem.resources,
                             problem.answer,
-                            problem.liveStatus
+                            problem.live_status
                         )}>
                             <div className="card_body">
                                 {/* Reminder: remove img src element */}
@@ -64,9 +64,12 @@ const ProblemsToReview = ({submittedProblems}) => {
             {problemCardData()}
 
             <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                Modal Disaster
-                <b>Example Text In Modal</b>
-                <p>{title}</p>
+                <p><input 
+                type="text"
+                required
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                /></p>
                 <p>{content}</p>
                 <p>{hints}</p>
                 <p>{resources}</p>
