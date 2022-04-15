@@ -61,7 +61,7 @@ function App() {
             <Route path="submission" element={<SubmmissionPage createProblem={createProblem}/>}/>
             {/* passing in our function so we can pull data to this level and save it */}
             <Route path={`/problem/:id`} element={<ProblemPage problems={problems}/>} />
-            <Route path={"review"} element={<ReviewProblemPage />}/>
+            <Route path={"admin/review"} element={<ReviewProblemPage problems={problems}/>}/>
             
           {/* <Route
             path="/"

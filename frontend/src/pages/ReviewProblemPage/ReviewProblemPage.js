@@ -2,12 +2,14 @@ import React from 'react'
 import axios from 'axios'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const ReviewProblemPage = () => {
+const ReviewProblemPage = ({problems}) => {
 
-  async function createProblem(newProblem){
-        let response = await axios.post('http://127.0.0.1:8000/api/problems/', newProblem)
-        console.log(response.data)
-        // await getAllProblems()
+  let problemsToReview = problems.filter(problem => problem.live_status == false)
+  console.log(problemsToReview)
+
+  async function updateProblem(){
+    let response = await axios.put('http://127.0.0.1:8000/api/problems/2/')
+    console.log(response.data)
   }
 
   return (
