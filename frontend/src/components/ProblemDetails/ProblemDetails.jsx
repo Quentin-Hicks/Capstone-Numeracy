@@ -31,6 +31,11 @@ const ProblemDetails = (props) => {
         setActiveProblem(response.data)
       }
 
+      async function updateProblem(problem, problemId){
+        let response = await axios.put(`http://127.0.0.1:8000/api/problems/${problemId}/`, problem)
+        // console.log(response.data)
+      }
+
     function handleSubmit(event){
         event.preventDefault()
         // console.log(userInput)
