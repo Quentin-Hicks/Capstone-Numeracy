@@ -21,6 +21,7 @@ import CapstoneNavBar from "./components/CapstoneNavBar/CapstoneNavBar";
 import Footer from "./components/Footer/Footer";
 import ProblemCard from "./components/ProblemCard/ProblemCard"
 import SubmissionForm from "./components/SubmissionForm/SubmissionForm"
+import ProblemsToReview from "./components/ProblemsToReview/ProblemsToReview";
 
 
 // Util Imports

@@ -1,5 +1,6 @@
 import "./ProblemDetails.css"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { Chart } from "react-google-charts";
 import { useParams } from "react-router-dom";
 import axios from "axios"
 import {toast} from 'react-toastify'
@@ -62,6 +63,20 @@ const ProblemDetails = (props) => {
         })
     }
 
+    const data = [
+        ["# of Correct Answers", "# of Incorrect Answers"],
+        ["Correct Answers", 545],
+        ["Incorrect Answers", 454],
+        ["Hints Used",878]
+         // CSS-style declaration
+    ]
+
+    const options = {
+        title: "Data For This Problem",
+        pieHole: 0.4,
+        is3D: false,
+    }
+
     return (
         <div>
            <h1>Here's a problem</h1>
@@ -87,6 +102,13 @@ const ProblemDetails = (props) => {
                    showAnswer?<p>{activeProblem.answer}</p>:null
                }
            </div>
+           <Chart
+                chartType="PieChart"
+                width="100%"
+                height="400px"
+                data={data}
+                options={options}
+            />
         </div>
     )
 }

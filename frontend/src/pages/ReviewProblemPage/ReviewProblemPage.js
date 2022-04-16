@@ -16,7 +16,7 @@ const ReviewProblemPage = ({problems}) => {
   return (
     <div>
         <h1>ReviewProblemPage</h1>
-        <ProblemsToReview submittedProblems={submittedProblems}/>
+        <ProblemsToReview submittedProblems={submittedProblems} problems={problems}/>
     </div>
   )
 }

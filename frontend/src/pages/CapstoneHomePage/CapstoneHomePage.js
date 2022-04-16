@@ -16,30 +16,7 @@ const CapstoneHomePage = () => {
     return (
         
         <div>
-            <h2>Add a New Blog</h2>
-            <form>
-                <label>Blog Title:</label>
-                <p><input 
-                type="text"
-                required
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                /></p>
-                <label>Blog Body:</label>
-                <textarea 
-                    required
-                    value={body}
-                    onChange={(e) => setBody(e.target.value)}>
-                </textarea>
-                <label>Blog Author</label>
-                <input 
-                type="text"
-                required
-                />
-                <button>Add Blog</button>
-                <p>{title}</p>
-                <p>{body}</p>
-            </form>
+            
         </div>
     )
 }

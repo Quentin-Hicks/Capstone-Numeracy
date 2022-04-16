@@ -1,11 +1,13 @@
 import "./ProblemsToReview.css"
 import React, { useEffect, useState } from 'react'
 import Modal from "../../components/Modal/Modal";
+import axios from "axios"
 
-const ProblemsToReview = ({submittedProblems}) => {
+const ProblemsToReview = ({submittedProblems}, {problems}) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
+    const [id, setId] = useState('')
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
     const [hints, setHints] = useState('')
@@ -13,8 +15,35 @@ const ProblemsToReview = ({submittedProblems}) => {
     const [answer, setAnswer] = useState('')
     const [liveStatus, setLiveStatus] = useState('')
 
+    const [changedProblem, setChangedProblem] = useState('')
 
-    function problemInReview(title, content, hints, resources, answer, liveStatus){
+    useEffect(() => {
+        // console.log(submittedProblems)
+    }, [])
+
+    function handleUpdate(e){
+        e.preventDefault()
+        let updatedProblem = {
+            title: title,
+            content: content,
+            hints: hints,
+            answer: answer,
+            resources: resources,
+            liveStatus: liveStatus
+        }
+        console.log(updatedProblem)
+        console.log(id)
+        updateProblem(updatedProblem, id)
+    }
+
+    async function updateProblem(problem, problemId){
+        let response = await axios.put(`http://127.0.0.1:8000/api/problems/${problemId}/`, problem)
+        console.log(response.data)
+        // debugger
+      }
+
+    function problemInReview(id, title, content, hints, resources, answer, liveStatus){
+        setId(id)
         setTitle(title)
         setContent(content)
         setHints(hints)
@@ -27,9 +56,6 @@ const ProblemsToReview = ({submittedProblems}) => {
         setLiveStatus(liveStatus)
     }
 
-    console.log(submittedProblems)
-
-
     function problemCardData(){
         return (
             <div className="wrapper">
@@ -38,6 +64,7 @@ const ProblemsToReview = ({submittedProblems}) => {
                     return (
                         <div className="card" key={problem.id} 
                         onClick={() => problemInReview(
+                            problem.id,
                             problem.title,
                             problem.content,
                             problem.hints,
@@ -63,53 +90,67 @@ const ProblemsToReview = ({submittedProblems}) => {
     return (
         <div>
             {problemCardData()}
-
+            
             <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                <label>Title</label>
-                <p>
-                    <input 
-                        type="text"
-                        required
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                    />
-                </p>
-                <label>Title</label>
-                <p>
-                    <input 
-                        type="text"
-                        required
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                    />
-                </p>
-                <label>Title</label>
-                <p>
-                    <input 
-                        type="text"
-                        required
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                    />
-                </p>
-                <label>Title</label>
-                <p>
-                    <input 
-                        type="text"
-                        required
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                    />
-                </p>
-                <label>Title</label>
-                <p>
-                    <input 
-                        type="text"
-                        required
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
-                    />
-                </p>
+                <div>
+                    <form>
+                    <label>Title</label>
+                    <p>
+                        <input 
+                            type="text"
+                            required='required'
+                            value={title}
+                            onChange={(e) => setTitle(e.target.value)}
+                        />
+                    </p>
+                    <label>Content</label>
+                    <p>
+                        <input 
+                            type="text"
+                            required
+                            value={content}
+                            onChange={(e) => setContent(e.target.value)}
+                        />
+                    </p>
+                    <label>Hints</label>
+                    <p>
+                        <input 
+                            type="text"
+                            required
+                            value={hints}
+                            onChange={(e) => setHints(e.target.value)}
+                        />
+                    </p>
+                    <label>Resources</label>
+                    <p>
+                        <input 
+                            type="text"
+                            required
+                            value={resources}
+                            onChange={(e) => setResources(e.target.value)}
+                        />
+                    </p>
+                    <label>Answer</label>
+                    <p>
+                        <input 
+                            type="text"
+                            required
+                            value={answer}
+                            onChange={(e) => setAnswer(e.target.value)}
+                        />
+                    </p>
+                    <label>Live Status</label>
+                    <p>
+                        <input 
+                            type="text"
+                            required
+                            value={liveStatus}
+                            onChange={(e) => setLiveStatus(e.target.value)}
+                        />
+                    </p>
+                    </form>
+                </div>
+                <button onClick={handleUpdate}>Update</button>
             </Modal>
         </div>
 
