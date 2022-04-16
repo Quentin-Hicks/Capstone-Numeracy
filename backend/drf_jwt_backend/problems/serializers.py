@@ -7,9 +7,10 @@ class ProblemSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'title', 'content',
             'hints', 'answer', 'resources',
-            'live_status', 'correct_answers',
-            'incorrect_answers', 'hints_used'
+            'live_status', 
+            'correctAnswers',
+            'incorrectAnswers', 'hintsUsed'
             ]
         # depth = 1
 
-        live_status = serializers.BooleanField(write_only=True)
+        # live_status = serializers.BooleanField(write_only=True)

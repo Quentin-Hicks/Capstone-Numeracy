@@ -16,6 +16,10 @@ const ProblemDetails = (props) => {
     const [showAnswer, setShowAnsewr] = useState(false)
     const [userInput, setUserInput] = useState('')
 
+    const [numberOfHintsUsed, setNumberOfHintsUsed] = useState('')
+    const [correctAnswers, setCorrectAnswers] = useState('')
+    const [incorrectAnswers, setIncorrectAnswers] = useState('')
+
     useEffect(()=>{
         getProblemById(id)
         // console.log(userAnswer)
@@ -63,30 +67,17 @@ const ProblemDetails = (props) => {
         })
     }
 
-    const data = [
-        ["Label", "Numbers"],
-        ["# of Correct Answers: 545", 545],
-        ["# of Incorrect Answers", 454],
-        ["Hints Used",878]
-         // CSS-style declaration
-    ]
+    function currentProblemView(){
 
-    const options = {
-        title: "Data For This Problem",
-        pieHole: 0.4,
-        // is3D: false,
-    }
+        // setNumberOfHintsUsed(activeProblem.hintsUsed)
 
-    return (
-        <div>
-            <Chart
-                chartType="PieChart"
-                width="100%"
-                height="400px"
-                data={data}
-                options={options}
-            />
-           <h1>Here's a problem</h1>
+        console.log(activeProblem.hintsUsed)
+        console.log(activeProblem.correctAnswers)
+        console.log(activeProblem.incorrectAnswers)
+
+        return (
+            <div>
+                <h1>Here's a problem</h1>
            <p>{activeProblem.title}</p>
            <p>{activeProblem.content}</p>
            <button onClick={() => setShowHint(!showHint)}>Hint</button>
@@ -109,7 +100,67 @@ const ProblemDetails = (props) => {
                    showAnswer?<p>{activeProblem.answer}</p>:null
                }
            </div>
+            </div>
+        )
+    }
+
+    const data = [
+        ["Label", "Numbers"],
+        ["# of Correct Answers", activeProblem.correctAnswers],
+        ["# of Incorrect Answers", activeProblem.incorrectAnswers],
+        ["# of Times Hints Used", activeProblem.hintsUsed]
+         // CSS-style declaration
+    ]
+
+    const options = {
+        title: "Data For This Problem",
+        pieHole: 0.4,
+        // is3D: false,
+    }
+
+    return (
+        <div>
+            <Chart
+                chartType="PieChart"
+                width="100%"
+                height="400px"
+                data={data}
+                options={options}
+            />
+            {currentProblemView()}
         </div>
+        // <div>
+        //     <Chart
+        //         chartType="PieChart"
+        //         width="100%"
+        //         height="400px"
+        //         data={data}
+        //         options={options}
+        //     />
+        //    <h1>Here's a problem</h1>
+        //    <p>{activeProblem.title}</p>
+        //    <p>{activeProblem.content}</p>
+        //    <button onClick={() => setShowHint(!showHint)}>Hint</button>
+        //    <div>
+        //        {
+        //            showHint?<p>{activeProblem.hints}</p>:null
+        //        }
+        //    </div>
+        //    <p>Resources: {activeProblem.resources}</p>
+        //    <form onSubmit={handleSubmit}>
+        //        <div>
+        //            {/* <h3></h3> */}
+        //            <input type="text" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
+        //            <button type="submit">Submit Answer</button>
+        //        </div>
+        //    </form>
+        //    <button onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
+        //    <div>
+        //        {
+        //            showAnswer?<p>{activeProblem.answer}</p>:null
+        //        }
+        //    </div>
+        // </div>
     )
 }
 

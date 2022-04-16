@@ -15,7 +15,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
     const [answer, setAnswer] = useState('')
     const [liveStatus, setLiveStatus] = useState('')
 
-    // const [changedProblem, setChangedProblem] = useState('')
+    const [changedProblem, setChangedProblem] = useState('')
 
     useEffect(() => {
         // console.log(submittedProblems)
@@ -29,9 +29,9 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
             hints: hints,
             answer: answer,
             resources: resources,
-            // liveStatus: liveStatus
+            liveStatus: liveStatus
         }
-        // setChangedProblem(updatedProblem)
+        setChangedProblem(updatedProblem)
         console.log('Problem Updated To: ', updatedProblem)
         // console.log(id)
         updateProblem(updatedProblem, id)
@@ -53,23 +53,22 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
         setLiveStatus(liveStatus)
     }
 
-    // function goLive(status){
-    //     console.log(status)
-    //     console.log(!status)
-    //     console.log(changedProblem)
-    //     let liveStatus = !status
-    //     console.log(liveStatus)
-    //     let liveProblem = {
-    //         title: title,
-    //         content: content,
-    //         hints: hints,
-    //         answer: answer,
-    //         resources: resources,
-    //         liveStatus: liveStatus
-    //     }
-    //     console.log(liveProblem)
-    //     updateProblem(liveProblem, id)
-    // }
+    function goLive(status){
+        // console.log(status)
+        // console.log(!status)
+        let liveStatus = !status
+        console.log(liveStatus)
+        let liveProblem = {
+            title: title,
+            content: content,
+            hints: hints,
+            answer: answer,
+            resources: resources,
+            liveStatus: liveStatus
+        }
+        console.log(liveProblem)
+        updateProblem(liveProblem, id)
+    }
 
     function problemCardData(){
         return (
@@ -94,7 +93,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                                 <b className="card_details">{problem.content}</b>
                             </div>
                             <button onClick={() => setIsOpen(true)} className="card_btn">View</button>
-                            {/* <button onClick={() => goLive(problem.live_status)} className="card_btn">Go Live</button> */}
+                            <button className="card_btn">Go Live</button>
                         </div>
                     )
                 })}
@@ -154,15 +153,15 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                             onChange={(e) => setAnswer(e.target.value)}
                         />
                     </p>
-                    {/* <label>Live Status</label>
-                    <p>{`${liveStatus}`}
+                    <label>Live Status</label>
+                    <p>
                         <input 
-                            type="text"
+                            type="checkbox"
                             required
-                            value={liveStatus}
-                            onChange={(e) => setLiveStatus(e.target.value)}
+                            // value={liveStatus}
+                            onChange={(e) => setLiveStatus(e.target.checked)}
                         />
-                    </p> */}
+                    </p>
                     </form>
                 </div>
                 <button onClick={handleUpdate}>Update</button>
