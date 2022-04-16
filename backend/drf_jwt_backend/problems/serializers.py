@@ -4,7 +4,12 @@ from .models import Problem
 class ProblemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Problem
-        fields = ['id', 'title', 'content', 'hints', 'answer', 'resources', 'live_status']
+        fields = [
+            'id', 'title', 'content',
+            'hints', 'answer', 'resources',
+            'live_status', 'correct_answers',
+            'incorrect_answers', 'hints_used'
+            ]
         # depth = 1
 
-    # problem_id = serializers.IntegerField(write_only=True)
+        live_status = serializers.BooleanField(write_only=True)

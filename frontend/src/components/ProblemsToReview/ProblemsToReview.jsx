@@ -15,7 +15,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
     const [answer, setAnswer] = useState('')
     const [liveStatus, setLiveStatus] = useState('')
 
-    const [changedProblem, setChangedProblem] = useState('')
+    // const [changedProblem, setChangedProblem] = useState('')
 
     useEffect(() => {
         // console.log(submittedProblems)
@@ -31,7 +31,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
             resources: resources,
             // liveStatus: liveStatus
         }
-        setChangedProblem(updatedProblem)
+        // setChangedProblem(updatedProblem)
         console.log('Problem Updated To: ', updatedProblem)
         // console.log(id)
         updateProblem(updatedProblem, id)
@@ -154,15 +154,15 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                             onChange={(e) => setAnswer(e.target.value)}
                         />
                     </p>
-                    <label>Live Status</label>
+                    {/* <label>Live Status</label>
                     <p>{`${liveStatus}`}
-                        {/* <input 
+                        <input 
                             type="text"
                             required
                             value={liveStatus}
                             onChange={(e) => setLiveStatus(e.target.value)}
-                        /> */}
-                    </p>
+                        />
+                    </p> */}
                     </form>
                 </div>
                 <button onClick={handleUpdate}>Update</button>

@@ -51,22 +51,22 @@ const ProblemDetails = (props) => {
     // debugger
     function correctAnswer() {
         toast.success('Correct!', {
-            position: toast.POSITION.TOP_RIGHT,
+            position: toast.POSITION.BOTTOM_RIGHT,
             autoclose: 5000
         })
     }
 
     function wrongAnswer() {
         toast.error('Wrong, please try again...', {
-            position: toast.POSITION.TOP_RIGHT,
+            position: toast.POSITION.BOTTOM_RIGHT,
             autoclose: 5000
         })
     }
 
     const data = [
-        ["# of Correct Answers", "# of Incorrect Answers"],
-        ["Correct Answers", 545],
-        ["Incorrect Answers", 454],
+        ["Label", "Numbers"],
+        ["# of Correct Answers: 545", 545],
+        ["# of Incorrect Answers", 454],
         ["Hints Used",878]
          // CSS-style declaration
     ]
@@ -74,11 +74,18 @@ const ProblemDetails = (props) => {
     const options = {
         title: "Data For This Problem",
         pieHole: 0.4,
-        is3D: false,
+        // is3D: false,
     }
 
     return (
         <div>
+            <Chart
+                chartType="PieChart"
+                width="100%"
+                height="400px"
+                data={data}
+                options={options}
+            />
            <h1>Here's a problem</h1>
            <p>{activeProblem.title}</p>
            <p>{activeProblem.content}</p>
@@ -102,13 +109,6 @@ const ProblemDetails = (props) => {
                    showAnswer?<p>{activeProblem.answer}</p>:null
                }
            </div>
-           <Chart
-                chartType="PieChart"
-                width="100%"
-                height="400px"
-                data={data}
-                options={options}
-            />
         </div>
     )
 }
