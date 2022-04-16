@@ -29,7 +29,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
             hints: hints,
             answer: answer,
             resources: resources,
-            liveStatus: liveStatus
+            liveStatus: liveStatus // convert to boolean
         }
         setChangedProblem(updatedProblem)
         console.log('Problem Updated To: ', updatedProblem)

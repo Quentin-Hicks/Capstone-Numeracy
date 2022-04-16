@@ -17,23 +17,23 @@ const ProblemDetails = (props) => {
     const [userInput, setUserInput] = useState('')
 
     const [numberOfHintsUsed, setNumberOfHintsUsed] = useState('')
-    const [correctAnswers, setCorrectAnswers] = useState('')
-    const [incorrectAnswers, setIncorrectAnswers] = useState('')
+    const [numberOfCorrectAnswers, setNumberOfCorrectAnswers] = useState('')
+    const [numberOfIncorrectAnswers, setNumberOfIncorrectAnswers] = useState('')
 
     useEffect(()=>{
         getProblemById(id)
+        // updateData(numberOfCorrectAnswers, numberOfIncorrectAnswers, numberOfHintsUsed)
         // console.log(userAnswer)
-    }, [])
+
+        // this code will run
+    }, [/* if this code changes */
+        
+        ])
 
     async function getProblemById(problemID){
         let response = await axios.get(`http://127.0.0.1:8000/api/problems/${problemID}/`)
         console.log(response.data)
         setActiveProblem(response.data)
-      }
-
-      async function updateProblem(problem, problemId){
-        let response = await axios.put(`http://127.0.0.1:8000/api/problems/${problemId}/`, problem)
-        // console.log(response.data)
       }
 
     function handleSubmit(event){
@@ -44,28 +44,63 @@ const ProblemDetails = (props) => {
 
     function isCorrect(){
         console.log(activeProblem.answer)
-        console.log(userInput)
+        // console.log(userInput)
         if(userInput == activeProblem.answer){
-            console.log('correct')
-            correctAnswer()
+            // console.log('correct')
+            // setNumberOfCorrectAnswers(++activeProblem.correctAnswers)
+
+            setNumberOfCorrectAnswers(activeProblem.correctAnswers++)
+            setNumberOfIncorrectAnswers(activeProblem.incorrectAnswers)
+            setNumberOfHintsUsed(activeProblem.hintsUsed)
+
+            console.log(numberOfCorrectAnswers)
+            console.log(numberOfIncorrectAnswers)
+            console.log(numberOfHintsUsed)
+
+            // console.log(55)
+
+            correctAnswerNotifcation()
             // let correctAnswer = userInput
             // return correctAnswer
-        } else {
-            console.log('not correct')
-            wrongAnswer()
+        } else if(userInput != activeProblem.answer){
+            // console.log('not correct')
+            setNumberOfCorrectAnswers(activeProblem.correctAnswers)
+            setNumberOfIncorrectAnswers(activeProblem.incorrectAnswers++)
+            setNumberOfHintsUsed(activeProblem.hintsUsed)
+
+            updateData(numberOfCorrectAnswers, numberOfIncorrectAnswers, numberOfHintsUsed)
+            wrongAnswerNotification()
         }
     }
 
+    function updateData(numOfCorrect, numOfIncorrect, numOfHints){
+        let problem = {
+            title: activeProblem.title,
+            content: activeProblem.content,
+            hints: activeProblem.hints,
+            answer: activeProblem.answer,
+            resources: activeProblem.resources,
+            liveStatus: activeProblem.liveStatus,
+            correctAnswers: numOfCorrect,
+            incorrectAnswers: numOfIncorrect,
+            hintsUsed: numOfHints
+        }
+        updateProblem(problem, activeProblem.id)
+    }
 
-    // debugger
-    function correctAnswer() {
+    async function updateProblem(problem, problemId){
+        let response = await axios.put(`http://127.0.0.1:8000/api/problems/${problemId}/`, problem)
+        // console.log(response.data)
+    }
+
+    function correctAnswerNotifcation() {
         toast.success('Correct!', {
             position: toast.POSITION.BOTTOM_RIGHT,
             autoclose: 5000
         })
     }
 
-    function wrongAnswer() {
+    function wrongAnswerNotification() {
         toast.error('Wrong, please try again...', {
             position: toast.POSITION.BOTTOM_RIGHT,
             autoclose: 5000
@@ -74,11 +109,6 @@ const ProblemDetails = (props) => {
 
     function currentProblemView(){
 
-        // setNumberOfHintsUsed(activeProblem.hintsUsed)
-
-        console.log(activeProblem.hintsUsed)
-        console.log(activeProblem.correctAnswers)
-        console.log(activeProblem.incorrectAnswers)
 
         return (
             <div>
