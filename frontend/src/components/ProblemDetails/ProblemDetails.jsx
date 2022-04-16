@@ -80,7 +80,7 @@ const ProblemDetails = (props) => {
             hints: activeProblem.hints,
             answer: activeProblem.answer,
             resources: activeProblem.resources,
-            liveStatus: activeProblem.liveStatus,
+            live_status: activeProblem.liveStatus,
             correctAnswers: numOfCorrect,
             incorrectAnswers: numOfIncorrect,
             hintsUsed: numOfHints
