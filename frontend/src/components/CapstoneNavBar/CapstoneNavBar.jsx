@@ -1,6 +1,5 @@
 import React from "react";
-import { useContext } from "react";
-import { useNavigate, Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./CapstoneNavBar.css";
 
 const CapstoneNavBar = () => {

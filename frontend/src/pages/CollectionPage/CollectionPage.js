@@ -1,7 +1,6 @@
 import "./CollectionPage.css"
 import ProblemCard from "../../components/ProblemCard/ProblemCard";
 import React from "react";
-import { render } from "react-dom"
 
 const CollectionPage = ({problems}) => {
 

@@ -1,5 +1,5 @@
 import "./ProblemDetails.css"
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Chart } from "react-google-charts";
 import { useParams } from "react-router-dom";
 import axios from "axios"
@@ -22,13 +22,8 @@ const ProblemDetails = (props) => {
 
     useEffect(()=>{
         getProblemById(id)
-        // updateData(numberOfCorrectAnswers, numberOfIncorrectAnswers, numberOfHintsUsed)
-        // console.log(userAnswer)
-
-        // this code will run
-    }, [/* if this code changes */
         
-        ])
+    }, [])
 
     async function getProblemById(problemID){
         let response = await axios.get(`http://127.0.0.1:8000/api/problems/${problemID}/`)
@@ -38,16 +33,12 @@ const ProblemDetails = (props) => {
 
     function handleSubmit(event){
         event.preventDefault()
-        // console.log(userInput)
         isCorrect()
     }
 
     function isCorrect(){
         console.log(activeProblem.answer)
-        // console.log(userInput)
         if(userInput == activeProblem.answer){
-            // console.log('correct')
-            // setNumberOfCorrectAnswers(++activeProblem.correctAnswers)
 
             setNumberOfCorrectAnswers(activeProblem.correctAnswers++)
             setNumberOfIncorrectAnswers(activeProblem.incorrectAnswers)
@@ -57,13 +48,10 @@ const ProblemDetails = (props) => {
             console.log(numberOfIncorrectAnswers)
             console.log(numberOfHintsUsed)
 
-            // console.log(55)
-
             correctAnswerNotifcation()
-            // let correctAnswer = userInput
-            // return correctAnswer
+    
         } else if(userInput != activeProblem.answer){
-            // console.log('not correct')
+            
             setNumberOfCorrectAnswers(activeProblem.correctAnswers)
             setNumberOfIncorrectAnswers(activeProblem.incorrectAnswers++)
             setNumberOfHintsUsed(activeProblem.hintsUsed)
@@ -90,7 +78,6 @@ const ProblemDetails = (props) => {
 
     async function updateProblem(problem, problemId){
         let response = await axios.put(`http://127.0.0.1:8000/api/problems/${problemId}/`, problem)
-        // await getProblemById(problemId)
         // console.log(response.data)
     }
 
@@ -165,38 +152,6 @@ const ProblemDetails = (props) => {
             />
             {currentProblemView()}
         </div>
-        // <div>
-        //     <Chart
-        //         chartType="PieChart"
-        //         width="100%"
-        //         height="400px"
-        //         data={data}
-        //         options={options}
-        //     />
-        //    <h1>Here's a problem</h1>
-        //    <p>{activeProblem.title}</p>
-        //    <p>{activeProblem.content}</p>
-        //    <button onClick={() => setShowHint(!showHint)}>Hint</button>
-        //    <div>
-        //        {
-        //            showHint?<p>{activeProblem.hints}</p>:null
-        //        }
-        //    </div>
-        //    <p>Resources: {activeProblem.resources}</p>
-        //    <form onSubmit={handleSubmit}>
-        //        <div>
-        //            {/* <h3></h3> */}
-        //            <input type="text" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
-        //            <button type="submit">Submit Answer</button>
-        //        </div>
-        //    </form>
-        //    <button onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
-        //    <div>
-        //        {
-        //            showAnswer?<p>{activeProblem.answer}</p>:null
-        //        }
-        //    </div>
-        // </div>
     )
 }
 

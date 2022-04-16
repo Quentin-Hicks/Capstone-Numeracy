@@ -17,10 +17,6 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
 
     const [changedProblem, setChangedProblem] = useState('')
 
-    useEffect(() => {
-        // console.log(submittedProblems)
-    }, [])
-
     function handleUpdate(e){
         e.preventDefault()
         let updatedProblem = {
@@ -29,11 +25,10 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
             hints: hints,
             answer: answer,
             resources: resources,
-            live_status: liveStatus // convert to boolean
+            live_status: liveStatus
         }
         setChangedProblem(updatedProblem)
         console.log('Problem Updated To: ', updatedProblem)
-        // console.log(id)
         updateProblem(updatedProblem, id)
     }
 
@@ -53,8 +48,6 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
     }
 
     function goLive(status){
-        // console.log(status)
-        // console.log(!status)
         let liveStatus = !status
         console.log(liveStatus)
         let liveProblem = {
@@ -157,7 +150,6 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                         <input 
                             type="checkbox"
                             required
-                            // value={liveStatus}
                             onChange={(e) => setLiveStatus(e.target.checked)}
                         />
                     </p>
@@ -166,7 +158,6 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                 <button onClick={handleUpdate}>Update</button>
             </Modal>
         </div>
-
     )
 }
 

@@ -1,6 +1,4 @@
 import "./ProblemCard.css"
-import { Routes, Route } from "react-router-dom";
-import ProblemPage from "../../pages/ProblemPage/ProblemPage";
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
@@ -9,16 +7,11 @@ const ProblemCard = ({problems}) => {
     const [problemData, setProblemData] = useState()
 
     useEffect(() => {
-        // console.log(problemData)
+        
     }, [problemData])
 
-    // function handleView(event){
-    //     event.preventDefault()
-    //     setProblemData()
-    // }
 
     let liveProblems = problems.filter(problem => problem.live_status == true)
-    // console.log(liveProblems)
 
     function problemCardData(){
         return (
@@ -32,7 +25,7 @@ const ProblemCard = ({problems}) => {
                             <div className="card">
                                 <div className="card_body">
                                     {/* Reminder: remove img src element */}
-                                    <img src="images/math-equation.jpg" className='card_image'/>
+                                    {/* <img src="images/math-equation.jpg" className='card_image'/> */}
                                     <h2 className="card_title">{problem.title}</h2>
                                     <p className="card_details">{problem.content}</p>
                                 </div>

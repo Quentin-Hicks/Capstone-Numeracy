@@ -6,9 +6,7 @@ import axios from "axios"
 import "./App.css";
 
 // Pages Imports
-import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
-import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import CollectionPage from "./pages/CollectionPage/CollectionPage"
 import ProblemPage from "./pages/ProblemPage/ProblemPage"
 import SubmmissionPage from "./pages/SubmissionPage/SubmissionPage"
@@ -16,29 +14,21 @@ import CapstoneHomePage from "./pages/CapstoneHomePage/CapstoneHomePage";
 import ReviewProblemPage from "./pages/ReviewProblemPage/ReviewProblemPage"
 
 // Component Imports
-import Navbar from "./components/NavBar/NavBar";
+import Navbar from "./components/NavBar/NavBar"; // implement css to CapstoneNavBar
 import CapstoneNavBar from "./components/CapstoneNavBar/CapstoneNavBar";
 import Footer from "./components/Footer/Footer";
-import ProblemCard from "./components/ProblemCard/ProblemCard"
-import SubmissionForm from "./components/SubmissionForm/SubmissionForm"
-import ProblemsToReview from "./components/ProblemsToReview/ProblemsToReview";
-
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
 
-  // debugger
 
   const [problems, setProblems] = useState([])
-  // const [getProblem, setGetProblem] = useState([])
 
     useEffect(()=> {
         getAllProblems();
     }, [])
-
-    // console.log(problems)
 
     async function getAllProblems(){
         let response = await axios.get('http://127.0.0.1:8000/api/problems/');
@@ -49,7 +39,6 @@ function App() {
     async function createProblem(newProblem){
       let response = await axios.post('http://127.0.0.1:8000/api/problems/', newProblem)
       // console.log(response.data)
-      // await getAllProblems()
     }
 
   return (
@@ -58,9 +47,7 @@ function App() {
         <Routes>
             <Route path="/" element={<CapstoneHomePage />} />
             <Route path="collection" element={<CollectionPage problems={problems}/>} />
-            {/* Reminder: need backticks for ProblemPage, `/problem/${problems.title}` */}
             <Route path="submission" element={<SubmmissionPage createProblem={createProblem}/>}/>
-            {/* passing in our function so we can pull data to this level and save it */}
             <Route path={`/problem/:id`} element={<ProblemPage problems={problems}/>} />
             <Route path={"admin/review"} element={<ReviewProblemPage problems={problems}/>}/>
             
@@ -72,7 +59,6 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} /> */}
         </Routes>
         <Footer />
