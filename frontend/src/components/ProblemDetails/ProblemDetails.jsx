@@ -90,6 +90,7 @@ const ProblemDetails = (props) => {
 
     async function updateProblem(problem, problemId){
         let response = await axios.put(`http://127.0.0.1:8000/api/problems/${problemId}/`, problem)
+        // await getProblemById(problemId)
         // console.log(response.data)
     }
 
@@ -115,13 +116,13 @@ const ProblemDetails = (props) => {
                 <h1>Here's a problem</h1>
            <p>{activeProblem.title}</p>
            <p>{activeProblem.content}</p>
+           <p>Resources: {activeProblem.resources}</p>
            <button onClick={() => setShowHint(!showHint)}>Hint</button>
            <div>
                {
                    showHint?<p>{activeProblem.hints}</p>:null
                }
            </div>
-           <p>Resources: {activeProblem.resources}</p>
            <form onSubmit={handleSubmit}>
                <div>
                    {/* <h3></h3> */}
