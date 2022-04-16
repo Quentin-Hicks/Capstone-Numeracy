@@ -29,16 +29,17 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
             hints: hints,
             answer: answer,
             resources: resources,
-            liveStatus: liveStatus
+            // liveStatus: liveStatus
         }
-        console.log(updatedProblem)
-        console.log(id)
+        setChangedProblem(updatedProblem)
+        console.log('Problem Updated To: ', updatedProblem)
+        // console.log(id)
         updateProblem(updatedProblem, id)
     }
 
     async function updateProblem(problem, problemId){
         let response = await axios.put(`http://127.0.0.1:8000/api/problems/${problemId}/`, problem)
-        console.log(response.data)
+        // console.log(response.data)
         // debugger
       }
 
@@ -49,12 +50,26 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
         setHints(hints)
         setResources(resources)
         setAnswer(answer)
-        if(liveStatus == false){
-            liveStatus = 'false'
-            // console.log(liveStatus)
-        }
         setLiveStatus(liveStatus)
     }
+
+    // function goLive(status){
+    //     console.log(status)
+    //     console.log(!status)
+    //     console.log(changedProblem)
+    //     let liveStatus = !status
+    //     console.log(liveStatus)
+    //     let liveProblem = {
+    //         title: title,
+    //         content: content,
+    //         hints: hints,
+    //         answer: answer,
+    //         resources: resources,
+    //         liveStatus: liveStatus
+    //     }
+    //     console.log(liveProblem)
+    //     updateProblem(liveProblem, id)
+    // }
 
     function problemCardData(){
         return (
@@ -79,7 +94,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                                 <b className="card_details">{problem.content}</b>
                             </div>
                             <button onClick={() => setIsOpen(true)} className="card_btn">View</button>
-                            <button className="card_btn">Go Live</button>
+                            {/* <button onClick={() => goLive(problem.live_status)} className="card_btn">Go Live</button> */}
                         </div>
                     )
                 })}
@@ -140,13 +155,13 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                         />
                     </p>
                     <label>Live Status</label>
-                    <p>
-                        <input 
+                    <p>{`${liveStatus}`}
+                        {/* <input 
                             type="text"
                             required
                             value={liveStatus}
                             onChange={(e) => setLiveStatus(e.target.value)}
-                        />
+                        /> */}
                     </p>
                     </form>
                 </div>
