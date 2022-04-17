@@ -10,17 +10,22 @@ const CapstoneNavBar = () => {
           <ul>
             <li className="brand">
                 <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-                    <p>Capstone Home Page</p>
+                    <p>Home</p>
                 </Link>
             </li>
             <li className="brand">
                 <Link to="/collection" style={{ textDecoration: "none", color: "black" }}>
-                    <p>Collection Page</p>
+                    <p>Problem Challenges</p>
                 </Link>
             </li>
             <li className="brand">
                 <Link to="/submission" style={{ textDecoration: "none", color: "black" }}>
-                    <p>Submission Page</p>
+                    <p>Submit A Problem</p>
+                </Link>
+            </li>
+            <li className="brand">
+                <Link to="/admin/review" style={{ textDecoration: "none", color: "black" }}>
+                    <p>Review Submissions</p>
                 </Link>
             </li>
           </ul>

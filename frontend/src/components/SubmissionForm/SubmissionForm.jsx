@@ -32,7 +32,7 @@ const SubmissionForm = ({createProblem}) => {
 
     return (
         <>
-            <h3>Submit A Math Problem</h3>
+            <h3>Submission Form</h3>
             <form onSubmit={handleSubmit} className="form-grid">
                 <div>
                     <p></p>

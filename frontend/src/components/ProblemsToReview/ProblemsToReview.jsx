@@ -82,10 +82,9 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                                 {/* Reminder: remove img src element */}
                                 {/* <img src="images/math-equation.jpg" className='card_image'/> */}
                                 <h2 className="card_title">{problem.title}</h2>
-                                <b className="card_details">{problem.content}</b>
+                                {/* <b className="card_details">{problem.content}</b> */}
                             </div>
-                            <button onClick={() => setIsOpen(true)} className="card_btn">View</button>
-                            <button className="card_btn">Go Live</button>
+                            <button onClick={() => setIsOpen(true)} className="card_btn">Review</button>
                         </div>
                     )
                 })}

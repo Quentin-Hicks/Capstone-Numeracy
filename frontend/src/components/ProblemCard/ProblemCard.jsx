@@ -27,7 +27,7 @@ const ProblemCard = ({problems}) => {
                                     {/* Reminder: remove img src element */}
                                     {/* <img src="images/math-equation.jpg" className='card_image'/> */}
                                     <h2 className="card_title">{problem.title}</h2>
-                                    <p className="card_details">{problem.content}</p>
+                                    {/* <p className="card_details">{problem.content}</p> */}
                                 </div>
                                 <button className="card_btn" onClick={() => setProblemData(problem)}>View</button>
                             </div>
@@ -41,28 +41,7 @@ const ProblemCard = ({problems}) => {
     return (
         <>
             {problemCardData()}
-            {/* <Routes>
-                <Route path="/problem" element={<ProblemPage problemData={problemData}/>}/>
-            </Routes> */}
-            {/* <ProblemDislpay /> */}
         </>
-        // <div className="wrapper">
-        //     {problems.map((problem) => {
-        //         return (
-        //             <Link to={`/problem/${problems.id}`} key={problem.id} style={{ textDecoration: "none", color: "black" }}>
-        //                 <div className="card">
-        //                     <div className="card_body">
-        //                         {/* Reminder: remove img src element */}
-        //                         <img src="images/math-equation.jpg" className='card_image'/>
-        //                         <h2 className="card_title">{problem.title}</h2>
-        //                         <p className="card_details">{problem.content}</p>
-        //                     </div>
-        //                     <button className="card_btn" onClick={handleView}>View</button>
-        //                 </div>
-        //             </Link>
-        //         )
-        //     })}
-        // </div>
     )
 }
 
