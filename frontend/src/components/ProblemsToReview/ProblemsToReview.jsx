@@ -47,21 +47,6 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
         setLiveStatus(liveStatus)
     }
 
-    function goLive(status){
-        let liveStatus = !status
-        console.log(liveStatus)
-        let liveProblem = {
-            title: title,
-            content: content,
-            hints: hints,
-            answer: answer,
-            resources: resources,
-            liveStatus: liveStatus
-        }
-        console.log(liveProblem)
-        updateProblem(liveProblem, id)
-    }
-
     function problemCardData(){
         return (
             <div className="wrapper">
@@ -144,7 +129,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                             onChange={(e) => setAnswer(e.target.value)}
                         />
                     </p>
-                    <label>Live Status</label>
+                    <label>Go Live</label>
                     <p>
                         <input 
                             type="checkbox"

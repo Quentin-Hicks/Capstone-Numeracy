@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
+/* REMINDER: add linear-gradient like the below */
+
 body {
     background-color: #052f4b;
+    /* background: linear-gradient(
+        yellow,
+        black
+    ),
+    Import image here maybe
+    background-size: cover;
+    background-position: center;
+    */
 }
+

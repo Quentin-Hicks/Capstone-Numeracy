@@ -30,35 +30,57 @@ const SubmissionForm = ({createProblem}) => {
     }
 
     return (
-        <>
-            <h3>Submission Form</h3>
+        <div className="form-container">
             <form onSubmit={handleSubmit} className="form-grid">
-                <div>
-                    <p></p>
-                </div>
+            <h1>Submission</h1>
                 <div>
                     <label>Title</label>
-                    <input type='text' className='form-control' value={title} onChange={(event) => setTitle(event.target.value)} placeholder='Enter title...'/>
+                    <input type='text'
+                    className='form-field'
+                    name="title"
+                    value={title}
+                    onChange={(event) => setTitle(event.target.value)}
+                    placeholder='Enter title...' />
                 </div>
                 <div>
                     <label>Content</label>
-                    <input type='text' className='form-control' value={content} onChange={(event) => setContent(event.target.value)} placeholder='Enter content...'/>
+                    <input type='text'
+                    className='form-field'
+                    name="content"
+                    value={content}
+                    onChange={(event) => setContent(event.target.value)}
+                    placeholder='Enter content...' />
                 </div>
                 <div>
                     <label>Hints</label>
-                    <input type='text' className='form-control' value={hints} onChange={(event) => setHints(event.target.value)} placeholder='Enter hints...'/>
+                    <input type='text'
+                    className='form-field'
+                    name="hints"
+                    value={hints}
+                    onChange={(event) => setHints(event.target.value)}
+                    placeholder='Enter hints...' />
                 </div>
                 <div>
                     <label>Resources</label>
-                    <input type='text' className='form-control' value={resources} onChange={(event) => setResources(event.target.value)} placeholder='Enter resources...'/>
+                    <input type='text'
+                    className='form-field'
+                    name="resources"
+                    value={resources}
+                    onChange={(event) => setResources(event.target.value)}
+                    placeholder='Enter resources...' />
                 </div>
                 <div>
                     <label>Answer</label>
-                    <input type='text' className='form-control' value={answer} onChange={(event) => setAnswer(event.target.value)} placeholder='Enter answer ...'/>
+                    <input type='text'
+                    className='form-field'
+                    name="answer"
+                    value={answer}
+                    onChange={(event) => setAnswer(event.target.value)}
+                    placeholder='Enter answer ...' />
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit" className="submit-btn">Submit</button>
             </form>
-        </>
+        </div>
     )
 }
 

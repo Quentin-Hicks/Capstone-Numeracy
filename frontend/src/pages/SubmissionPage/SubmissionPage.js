@@ -6,7 +6,6 @@ const SubmissionPage = ({createProblem}) => {
 
     return (
         <>
-            <h1></h1>
             <SubmissionForm createProblem={createProblem}/>
         </>
     )
