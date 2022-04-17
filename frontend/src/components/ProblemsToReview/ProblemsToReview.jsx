@@ -69,7 +69,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                                 <h2 className="card_title">{problem.title}</h2>
                                 {/* <b className="card_details">{problem.content}</b> */}
                             </div>
-                            <button onClick={() => setIsOpen(true)} className="card_btn">Review</button>
+                            <button onClick={() => setIsOpen(true)} className="review-btn">Review</button>
                         </div>
                     )
                 })}
@@ -82,62 +82,67 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
             {problemCardData()}
             
             <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                <div>
-                    <form className="modal-form">
-                    <label>Title</label>
-                    <p>
-                        <input 
-                            type="text"
-                            required='required'
-                            value={title}
-                            onChange={(e) => setTitle(e.target.value)}
-                        />
-                    </p>
-                    <label>Content</label>
-                    <p>
-                        <input 
-                            type="text"
-                            required
-                            value={content}
-                            onChange={(e) => setContent(e.target.value)}
-                        />
-                    </p>
-                    <label>Hints</label>
-                    <p>
-                        <input 
-                            type="text"
-                            required
-                            value={hints}
-                            onChange={(e) => setHints(e.target.value)}
-                        />
-                    </p>
-                    <label>Resources</label>
-                    <p>
-                        <input 
-                            type="text"
-                            required
-                            value={resources}
-                            onChange={(e) => setResources(e.target.value)}
-                        />
-                    </p>
-                    <label>Answer</label>
-                    <p>
-                        <input 
-                            type="text"
-                            required
-                            value={answer}
-                            onChange={(e) => setAnswer(e.target.value)}
-                        />
-                    </p>
-                    <label className="go-live">Go Live</label>
-                    <p className="modal-live">
-                        <input 
-                            type="checkbox"
-                            name="golive"
-                            required
-                            onChange={(e) => setLiveStatus(e.target.checked)}
-                        />
-                    </p>
+                <div className="review-container">
+                    <form className="review-form">
+                        <label className="review-label">Title</label>
+                        <p>
+                            <input 
+                                type="text"
+                                className="review-field"
+                                required='required'
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                            />
+                        </p>
+                        <label className="review-label">Content</label>
+                        <p>
+                            <input 
+                                type="text"
+                                className="review-field"
+                                required
+                                value={content}
+                                onChange={(e) => setContent(e.target.value)}
+                            />
+                        </p>
+                        <label className="review-label">Hints</label>
+                        <p>
+                            <input 
+                                type="text"
+                                className="review-field"
+                                required
+                                value={hints}
+                                onChange={(e) => setHints(e.target.value)}
+                            />
+                        </p>
+                        <label className="review-label">Resources</label>
+                        <p>
+                            <input 
+                                type="text"
+                                className="review-field"
+                                required
+                                value={resources}
+                                onChange={(e) => setResources(e.target.value)}
+                            />
+                        </p>
+                        <label className="review-label">Answer</label>
+                        <p>
+                            <input 
+                                type="text"
+                                className="review-field"
+                                required
+                                value={answer}
+                                onChange={(e) => setAnswer(e.target.value)}
+                            />
+                        </p>
+                        <label className="go-live">Go Live</label>
+                        <p className="modal-live">
+                            <input 
+                                type="checkbox"
+                                name="golive"
+                                required
+                                onChange={(e) => setLiveStatus(e.target.checked)}
+                            />
+                        </p>
                     </form>
                 </div>
                 <button className="update-btn" onClick={handleUpdate}>Update</button>

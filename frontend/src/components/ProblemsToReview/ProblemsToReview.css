@@ -90,6 +90,42 @@ body {
     justify-content: center;
 }
 
+.review-form{
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+}
+
+.review-btn{
+    padding: 1rem;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 1rem;
+    border: 2px solid;
+    background-color: none;
+    border-radius: 2px;
+    transition: 200ms ease-in, color 200ms ease-in;
+    cursor: pointer;
+}
+
+.review-field{
+    display: flex;
+    text-align: left;
+    padding: 15px;
+    margin: 10px 0px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.review-label{
+    font-size: 18px;
+    font-weight: bold;
+    color: gray;
+}
 /* .card_btn:hover {
     background: clr-primary;
     color: white;

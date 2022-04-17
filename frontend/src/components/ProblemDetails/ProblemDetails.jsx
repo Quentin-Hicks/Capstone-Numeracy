@@ -100,29 +100,27 @@ const ProblemDetails = (props) => {
 
         return (
             <div>
-                <h1>Here's a problem</h1>
-           <p>{activeProblem.title}</p>
-           <p>{activeProblem.content}</p>
-           <p>Resources: {activeProblem.resources}</p>
-           <button onClick={() => setShowHint(!showHint)}>Hint</button>
-           <div>
-               {
-                   showHint?<p>{activeProblem.hints}</p>:null
-               }
-           </div>
-           <form onSubmit={handleSubmit}>
-               <div>
-                   {/* <h3></h3> */}
-                   <input type="text" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
-                   <button type="submit">Submit Answer</button>
-               </div>
-           </form>
-           <button onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
-           <div>
-               {
-                   showAnswer?<p>{activeProblem.answer}</p>:null
-               }
-           </div>
+                {/* <h1>Here's a problem</h1> */}
+                <p>{activeProblem.title}</p>
+                <p>{activeProblem.content}</p>
+                <p>Resources: {activeProblem.resources}</p>
+                <button onClick={() => setShowHint(!showHint)}>Hint</button>
+                <div>
+                    {
+                        showHint?<p>{activeProblem.hints}</p>:null
+                    }
+                </div>
+                <div onSubmit={handleSubmit}>
+                    {/* <h3></h3> */}
+                    <input type="text" className="ans-input" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
+                    <button type="check-ans-btn">Submit Answer</button>
+                </div>
+                <button onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
+                <div>
+                    {
+                        showAnswer?<p>{activeProblem.answer}</p>:null
+                    }
+                </div>
             </div>
         )
     }
@@ -131,25 +129,26 @@ const ProblemDetails = (props) => {
         ["Label", "Numbers"],
         ["# of Correct Answers", activeProblem.correctAnswers],
         ["# of Incorrect Answers", activeProblem.incorrectAnswers],
-        ["# of Times Hints Used", activeProblem.hintsUsed]
+        ["# of Times Hints Used", activeProblem.hintsUsed],
          // CSS-style declaration
     ]
 
     const options = {
-        title: "Data For This Problem",
         pieHole: 0.4,
         // is3D: false,
     }
 
     return (
         <div>
-            <Chart
-                chartType="PieChart"
-                width="100%"
-                height="400px"
-                data={data}
-                options={options}
-            />
+            <div >
+                <Chart
+                    chartType="PieChart"
+                    width="100%"
+                    height="400px"
+                    data={data}
+                    options={options}
+                />
+            </div>
             {currentProblemView()}
         </div>
     )

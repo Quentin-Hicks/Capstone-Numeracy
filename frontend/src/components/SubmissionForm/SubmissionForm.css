@@ -1,4 +1,4 @@
-form{
+.form-layout{
     background-color: white;
     padding: 20px 40px;
     border-radius: 10px;
@@ -22,16 +22,13 @@ form{
 .form-field {
     display: flex;
     text-align: left;
-}
-
-input{
     padding: 15px;
     margin: 10px 0px;
     border-radius: 5px;
     border: 1px solid gray;
 }
 
-h1{
+.form-head{
     color: black;
     text-align: center;
     margin-bottom: 10px;
@@ -52,7 +49,7 @@ h1{
     margin-bottom: 10px;
 }
 
-label{
+.sbt-label{
     font-size: 18px;
     font-weight: bold;
     color: gray;

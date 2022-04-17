@@ -31,10 +31,10 @@ const SubmissionForm = ({createProblem}) => {
 
     return (
         <div className="form-container">
-            <form onSubmit={handleSubmit} className="form-grid">
-            <h1>Submission</h1>
+            <form onSubmit={handleSubmit} className="form-layout">
+            <h1 className="form-head">Submission</h1>
                 <div>
-                    <label>Title</label>
+                    <label className="sbt-label">Title</label>
                     <input type='text'
                     className='form-field'
                     name="title"
@@ -43,7 +43,7 @@ const SubmissionForm = ({createProblem}) => {
                     placeholder='Enter title...' />
                 </div>
                 <div>
-                    <label>Content</label>
+                    <label className="sbt-label">Content</label>
                     <input type='text'
                     className='form-field'
                     name="content"
@@ -52,7 +52,7 @@ const SubmissionForm = ({createProblem}) => {
                     placeholder='Enter content...' />
                 </div>
                 <div>
-                    <label>Hints</label>
+                    <label className="sbt-label">Hints</label>
                     <input type='text'
                     className='form-field'
                     name="hints"
@@ -61,7 +61,7 @@ const SubmissionForm = ({createProblem}) => {
                     placeholder='Enter hints...' />
                 </div>
                 <div>
-                    <label>Resources</label>
+                    <label className="sbt-label">Resources</label>
                     <input type='text'
                     className='form-field'
                     name="resources"
@@ -70,7 +70,7 @@ const SubmissionForm = ({createProblem}) => {
                     placeholder='Enter resources...' />
                 </div>
                 <div>
-                    <label>Answer</label>
+                    <label className="sbt-label">Answer</label>
                     <input type='text'
                     className='form-field'
                     name="answer"

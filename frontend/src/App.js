@@ -1,12 +1,10 @@
 // General Imports
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
-import { Link, Outlet } from "react-router-dom";
 import axios from "axios"
 import "./App.css";
 
 // Pages Imports
-import LoginPage from "./pages/LoginPage/LoginPage";
 import CollectionPage from "./pages/CollectionPage/CollectionPage"
 import ProblemPage from "./pages/ProblemPage/ProblemPage"
 import SubmmissionPage from "./pages/SubmissionPage/SubmissionPage"
@@ -14,7 +12,6 @@ import CapstoneHomePage from "./pages/CapstoneHomePage/CapstoneHomePage";
 import ReviewProblemPage from "./pages/ReviewProblemPage/ReviewProblemPage"
 
 // Component Imports
-import Navbar from "./components/NavBar/NavBar"; // implement css to CapstoneNavBar
 import CapstoneNavBar from "./components/CapstoneNavBar/CapstoneNavBar";
 import Footer from "./components/Footer/Footer";
 
