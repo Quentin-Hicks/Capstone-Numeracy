@@ -14,7 +14,7 @@ const Modal = ({open, children, onClose}) => {
     transform: 'translate(-50%, -50%)',
     backgroundColor: '#FFF',
     padding: '50px',
-    zIndex: 1000
+    zIndex: 1000,
   }
 
   const OVERLAY_STYLE = {
@@ -31,7 +31,7 @@ const Modal = ({open, children, onClose}) => {
     <>  
         <div style={OVERLAY_STYLE} />
         <div style={MODAL_STYLES}>
-            <button onClick={onClose}>Close Modal</button>
+            <button className='close-modal-btn' onClick={onClose}>Close Modal</button>
             {children}
         </div>
     </>,

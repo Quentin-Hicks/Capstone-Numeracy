@@ -9,8 +9,6 @@ body {
     object-fit: cover;
 }
 
-/* border radius */
-
 *,
 *::before,
 *::after {
@@ -57,11 +55,39 @@ body {
     background: transparent;
     color: clr-primary;
     border-radius: radius;
-    transition: background 200ms ease-in, color 200ms ease-in;
+    transition: 200ms ease-in, color 200ms ease-in;
 }
 
 .card:hover {
     transform: scale(1.02);
+}
+
+.update-btn{
+    /* border: none; */
+    border-radius: 5px;
+    border: 1px solid gray;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    width: 45%;
+    background-color: purple;
+    color: white;
+}
+
+.go-live{
+    display: flex;
+    justify-content: center;
+}
+
+.golive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-live{
+    display: flex;
+    justify-content: center;
 }
 
 /* .card_btn:hover {

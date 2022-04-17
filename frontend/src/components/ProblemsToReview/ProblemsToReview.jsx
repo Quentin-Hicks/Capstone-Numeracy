@@ -83,7 +83,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
             
             <Modal open={isOpen} onClose={() => setIsOpen(false)}>
                 <div>
-                    <form>
+                    <form className="modal-form">
                     <label>Title</label>
                     <p>
                         <input 
@@ -129,17 +129,18 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                             onChange={(e) => setAnswer(e.target.value)}
                         />
                     </p>
-                    <label>Go Live</label>
-                    <p>
+                    <label className="go-live">Go Live</label>
+                    <p className="modal-live">
                         <input 
                             type="checkbox"
+                            name="golive"
                             required
                             onChange={(e) => setLiveStatus(e.target.checked)}
                         />
                     </p>
                     </form>
                 </div>
-                <button onClick={handleUpdate}>Update</button>
+                <button className="update-btn" onClick={handleUpdate}>Update</button>
             </Modal>
         </div>
     )
