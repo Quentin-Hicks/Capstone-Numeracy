@@ -83,43 +83,44 @@ const ProblemDetails = (props) => {
 
     function correctAnswerNotifcation() {
         toast.success('Correct!', {
-            position: toast.POSITION.BOTTOM_RIGHT,
+            position: toast.POSITION.TOP_RIGHT,
             autoclose: 5000
         })
     }
 
     function wrongAnswerNotification() {
         toast.error('Wrong, please try again...', {
-            position: toast.POSITION.BOTTOM_RIGHT,
+            position: toast.POSITION.TOP_RIGHT,
             autoclose: 5000
         })
     }
 
     function currentProblemView(){
 
-
         return (
-            <div>
+            <div className="pbm-box">
                 {/* <h1>Here's a problem</h1> */}
-                <p>{activeProblem.title}</p>
-                <p>{activeProblem.content}</p>
-                <p>Resources: {activeProblem.resources}</p>
-                <button onClick={() => setShowHint(!showHint)}>Hint</button>
-                <div>
-                    {
-                        showHint?<p>{activeProblem.hints}</p>:null
-                    }
-                </div>
-                <div onSubmit={handleSubmit}>
-                    {/* <h3></h3> */}
-                    <input type="text" className="ans-input" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
-                    <button type="check-ans-btn">Submit Answer</button>
-                </div>
-                <button onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
-                <div>
-                    {
-                        showAnswer?<p>{activeProblem.answer}</p>:null
-                    }
+                <div className="pbm-container">
+                    <p className="pbm-element">{activeProblem.title}</p>
+                    <p className="pbm-element">{activeProblem.content}</p>
+                    <p className="pbm-element">Resources: {activeProblem.resources}</p>
+                    <button className="pbm-btn" onClick={() => setShowHint(!showHint)}>Hint</button>
+                    <div>
+                        {
+                            showHint?<p>{activeProblem.hints}</p>:null
+                        }
+                    </div>
+                    <form className="pbm-form" onSubmit={handleSubmit}>
+                        {/* <h3></h3> */}
+                        <input type="text" className="ans-input" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
+                        <button type="submit" className="pbm-btn">Submit Answer</button>
+                    </form>
+                    <button className="pbm-btn" onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
+                    <div>
+                        {
+                            showAnswer?<p>{activeProblem.answer}</p>:null
+                        }
+                    </div>
                 </div>
             </div>
         )
@@ -140,6 +141,7 @@ const ProblemDetails = (props) => {
 
     return (
         <div>
+            {currentProblemView()}
             <div >
                 <Chart
                     chartType="PieChart"
@@ -149,7 +151,6 @@ const ProblemDetails = (props) => {
                     options={options}
                 />
             </div>
-            {currentProblemView()}
         </div>
     )
 }

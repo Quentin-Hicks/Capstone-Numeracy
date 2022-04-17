@@ -1,0 +1,30 @@
+.pbm-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 40vh;
+}
+
+.pbm-container{
+   text-align: center;
+   background-color: yellow;
+   padding: 50px 20px;
+   border-radius: 10px;
+   font-size: 20px;
+}
+
+.pbm-btn{
+    padding: 5px;
+    border: 2px solid gray;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.pbm-form{
+    display: flex;
+}
+
+.pbm-element{
+    margin: 5px;
+}
