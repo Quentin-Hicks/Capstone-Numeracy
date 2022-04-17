@@ -9,7 +9,7 @@ const ReviewProblemPage = ({problems}) => {
 
   return (
     <div>
-        <h1>Submissions</h1>
+        <h1 className='overhead'>Submitted Problems</h1>
         <ProblemsToReview submittedProblems={submittedProblems} problems={problems}/>
     </div>
   )
