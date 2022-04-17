@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,200;1,600&display=swap');
+
+.app-name {
+    display: flex;
+    justify-content: center;
+    font-size: 5em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.slogan {
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}

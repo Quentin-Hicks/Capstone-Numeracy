@@ -1,5 +1,4 @@
 import "./SubmissionForm.css"
-import ReviewProblemPage from "../../pages/ReviewProblemPage/ReviewProblemPage";
 import React, { useState } from 'react';
 
 const SubmissionForm = ({createProblem}) => {
@@ -37,23 +36,23 @@ const SubmissionForm = ({createProblem}) => {
                 <div>
                     <p></p>
                 </div>
-                <div className='form-grid'>
+                <div>
                     <label>Title</label>
                     <input type='text' className='form-control' value={title} onChange={(event) => setTitle(event.target.value)} placeholder='Enter title...'/>
                 </div>
-                <div className='form-grid'>
+                <div>
                     <label>Content</label>
                     <input type='text' className='form-control' value={content} onChange={(event) => setContent(event.target.value)} placeholder='Enter content...'/>
                 </div>
-                <div className='form-grid'>
+                <div>
                     <label>Hints</label>
                     <input type='text' className='form-control' value={hints} onChange={(event) => setHints(event.target.value)} placeholder='Enter hints...'/>
                 </div>
-                <div className='form-grid'>
+                <div>
                     <label>Resources</label>
                     <input type='text' className='form-control' value={resources} onChange={(event) => setResources(event.target.value)} placeholder='Enter resources...'/>
                 </div>
-                <div className='form-grid'>
+                <div>
                     <label>Answer</label>
                     <input type='text' className='form-control' value={answer} onChange={(event) => setAnswer(event.target.value)} placeholder='Enter answer ...'/>
                 </div>
