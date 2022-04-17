@@ -5,6 +5,12 @@ body {
     /* margin: 2rem; */
 }
 
+.overhead {
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+}
+
 .card_image {
     height: 12rem;
     width: 100%;
@@ -31,18 +37,19 @@ body {
 
 .card {
     overflow: hidden;
-    box-shadow: 0 2px 20px gray;
+    box-shadow: 0 2px 20px rgb(211, 214, 13);
     border-radius: radius;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
     transition: transform 200ms ease-in;
-
+    background-color: rgb(1, 21, 29);
 }
 
 .card_title {
     padding: 1rem;
+    color: rgb(161, 194, 15)
 }
 
 .card_details {
@@ -56,17 +63,16 @@ body {
     font-size: 1rem;
     margin: 1rem;
     border: 2px solid;
-    background: transparent;
-    color: clr-primary;
-    border-radius: radius;
-    transition: background 200ms ease-in, color 200ms ease-in;
+    color: rgba(196, 224, 70, 0.87);
+    border-radius: 2px;
+    transition: 200ms ease-in, color 200ms ease-in;
 }
 
 .card:hover {
     transform: scale(1.02);
 }
 
-/* .card_btn:hover {
-    background: clr-primary;
-    color: white;
-} */
+.card_btn:hover {
+    background: rgba(114, 81, 175, 0.678);
+    /* color: rgb(161, 194, 15); */
+}

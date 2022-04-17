@@ -3,14 +3,14 @@
 .app-name {
     display: flex;
     justify-content: center;
-    font-size: 5em;
+    font-size: 5rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .slogan {
     display: flex;
     justify-content: center;
-    font-size: 3em;
+    font-size: 3rem;
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
 }
