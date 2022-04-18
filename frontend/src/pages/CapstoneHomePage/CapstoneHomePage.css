@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,200;1,600&display=swap');
 
+.project-cap{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+    color: yellow;
+}
+
 .app-name {
     display: flex;
     justify-content: center;
@@ -13,4 +21,5 @@
     font-size: 3rem;
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
+    padding-top: 40px;
 }

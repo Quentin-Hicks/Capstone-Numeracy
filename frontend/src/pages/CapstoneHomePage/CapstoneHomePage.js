@@ -6,9 +6,9 @@ const CapstoneHomePage = () => {
 
     return (
         
-        <div>
+        <div className="project-cap">
             <h1 className="app-name">NUME</h1>
-            <p className="slogan">It's all about the numbers...and math.</p>
+            <p className="slogan">We're all about the numbers...</p>
         </div>
     )
 }
