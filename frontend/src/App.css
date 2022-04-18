@@ -5,12 +5,12 @@
 body {
     background-color: #052f4b;
     /* background: linear-gradient(
-        yellow,
-        black
-    ),
-    Import image here maybe
+        rgb(148, 148, 55),
+        #052f4b
+    ) */
+    /* Import image here maybe
     background-size: cover;
-    background-position: center;
-    */
+    background-position: center; */
+   
 }
 
