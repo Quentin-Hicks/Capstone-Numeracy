@@ -1,24 +1,44 @@
-.pbm-box{
+.pbm-container{
+    font-size: 20px;
+    margin-bottom: 100px;
+ }
+
+.pbm-title{
+    margin: 50px;
+    text-align: center;
+    color: yellow;
+}
+
+.pbm-info{
+    color: yellow;
+    text-align: center;
+    margin-right: 40rem;
+}
+
+.pbm-btns{
+    text-align: center;
+    margin-left: 40rem;
+}
+
+.pbm-form{
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+}
+
+/* .pbm-box{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
     height: 40vh;
-}
+} */
 
-.pbm-container{
-   text-align: center;
-   background-color: yellow;
-   padding: 50px 20px;
-   border-radius: 10px;
-   font-size: 20px;
-}
-
-.pbm-btn{
+/* .pbm-btn{
     padding: 5px;
     border: 2px solid gray;
     border-radius: 4px;
-    margin: 5px;
+    margin: 10px;
 }
 
 .pbm-form{
@@ -28,3 +48,9 @@
 .pbm-element{
     margin: 5px;
 }
+
+.ans-input{
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid gray;
+} */

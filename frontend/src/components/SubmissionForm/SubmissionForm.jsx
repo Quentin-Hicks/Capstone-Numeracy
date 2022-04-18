@@ -18,8 +18,8 @@ const SubmissionForm = ({createProblem}) => {
             title: title,
             content: content,
             hints: hints,
+            resources: resources,
             answer: answer,
-            resources: resources
         }
 
         console.log(newSubmission)

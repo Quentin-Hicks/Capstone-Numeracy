@@ -101,26 +101,30 @@ const ProblemDetails = (props) => {
             <div className="pbm-box">
                 {/* <h1>Here's a problem</h1> */}
                 <div className="pbm-container">
-                    <p className="pbm-element">{activeProblem.title}</p>
-                    <p className="pbm-element">{activeProblem.content}</p>
-                    <p className="pbm-element">Resources: {activeProblem.resources}</p>
-                    <button className="pbm-btn" onClick={() => setShowHint(!showHint)}>Hint</button>
-                    <div>
-                        {
-                            showHint?<p>{activeProblem.hints}</p>:null
-                        }
+                    <h1 className="pbm-title">{activeProblem.title}</h1>
+                    <div className="pbm-info">
+                        <p>{activeProblem.content}</p>
+                        <p>Resources: {activeProblem.resources}</p>
+                    </div>
+                    <div className="pbm-btns">
+                        <button className="pbm-show-hint" onClick={() => setShowHint(!showHint)}>Hint</button>
+                        <div>
+                            {
+                                showHint?<p>{activeProblem.hints}</p>:null
+                            }
+                        </div>
+                        <button className="pbm-show-ans" onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
+                        <div>
+                            {
+                                showAnswer?<p>{activeProblem.answer}</p>:null
+                            }
+                        </div>
                     </div>
                     <form className="pbm-form" onSubmit={handleSubmit}>
                         {/* <h3></h3> */}
                         <input type="text" className="ans-input" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
                         <button type="submit" className="pbm-btn">Submit Answer</button>
                     </form>
-                    <button className="pbm-btn" onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
-                    <div>
-                        {
-                            showAnswer?<p>{activeProblem.answer}</p>:null
-                        }
-                    </div>
                 </div>
             </div>
         )
