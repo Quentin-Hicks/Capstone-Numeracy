@@ -26,6 +26,14 @@
     /* flex-direction: column; */
 }
 
+.pbm-hint{
+    color: yellow;
+}
+
+.pbm-ans{
+    color: yellow;
+}
+
 /* .pbm-box{
     display: flex;
     align-items: center;

@@ -108,13 +108,13 @@ const ProblemDetails = (props) => {
                     </div>
                     <div className="pbm-btns">
                         <button className="pbm-show-hint" onClick={() => setShowHint(!showHint)}>Hint</button>
-                        <div>
+                        <div className="pbm-hint">
                             {
                                 showHint?<p>{activeProblem.hints}</p>:null
                             }
                         </div>
                         <button className="pbm-show-ans" onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
-                        <div>
+                        <div className="pbm-ans">
                             {
                                 showAnswer?<p>{activeProblem.answer}</p>:null
                             }
