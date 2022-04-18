@@ -35,7 +35,7 @@ const SubmissionForm = ({createProblem}) => {
             <h1 className="form-head">Submission</h1>
                 <div>
                     <label className="sbt-label">Title</label>
-                    <input type='text'
+                    <textarea
                     className='form-field'
                     name="title"
                     value={title}
@@ -44,7 +44,7 @@ const SubmissionForm = ({createProblem}) => {
                 </div>
                 <div>
                     <label className="sbt-label">Content</label>
-                    <input type='text'
+                    <textarea
                     className='form-field'
                     name="content"
                     value={content}
@@ -53,7 +53,7 @@ const SubmissionForm = ({createProblem}) => {
                 </div>
                 <div>
                     <label className="sbt-label">Hints</label>
-                    <input type='text'
+                    <textarea
                     className='form-field'
                     name="hints"
                     value={hints}
@@ -62,7 +62,7 @@ const SubmissionForm = ({createProblem}) => {
                 </div>
                 <div>
                     <label className="sbt-label">Resources</label>
-                    <input type='text'
+                    <textarea
                     className='form-field'
                     name="resources"
                     value={resources}

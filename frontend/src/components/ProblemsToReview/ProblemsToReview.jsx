@@ -86,8 +86,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                     <form className="review-form">
                         <label className="review-label">Title</label>
                         <p>
-                            <input 
-                                type="text"
+                            <textarea
                                 className="review-field"
                                 required='required'
                                 value={title}
@@ -96,8 +95,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                         </p>
                         <label className="review-label">Content</label>
                         <p>
-                            <input 
-                                type="text"
+                            <textarea
                                 className="review-field"
                                 required
                                 value={content}
@@ -106,8 +104,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                         </p>
                         <label className="review-label">Hints</label>
                         <p>
-                            <input 
-                                type="text"
+                            <textarea
                                 className="review-field"
                                 required
                                 value={hints}
@@ -116,8 +113,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                         </p>
                         <label className="review-label">Resources</label>
                         <p>
-                            <input 
-                                type="text"
+                            <textarea
                                 className="review-field"
                                 required
                                 value={resources}
