@@ -50,7 +50,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
     function problemCardData(){
         return (
             <div className="wrapper">
-                {/* <h1>Collection Page</h1> */}
+                {/* <h1 className='submitted-head'>Submitted Problems</h1> */}
                 {submittedProblems.map((problem) => {
                     return (
                         <div className="card" key={problem.id} 

@@ -1,0 +1,6 @@
+.submitted-head{
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+    color: rgb(182, 182, 15);
+}

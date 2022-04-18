@@ -126,6 +126,14 @@ body {
     font-weight: bold;
     color: gray;
 }
+
+.submitted-head{
+    display: flex;
+    justify-content: center;
+    padding: 4rem;
+    color: rgb(199, 199, 16);
+}
+
 /* .card_btn:hover {
     background: clr-primary;
     color: white;
