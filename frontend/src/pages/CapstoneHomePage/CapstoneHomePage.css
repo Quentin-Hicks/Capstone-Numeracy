@@ -1,25 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,200;1,600&display=swap');
 
-.project-cap{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    height: 70vh;
-    color: yellow;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.app-name {
-    display: flex;
-    justify-content: center;
-    font-size: 5rem;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.slogan {
-    display: flex;
-    justify-content: center;
-    font-size: 3rem;
-    font-family: 'Nunito', sans-serif;
-    font-weight: bold;
-    padding-top: 40px;
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }

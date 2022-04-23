@@ -5,11 +5,31 @@ const CapstoneHomePage = () => {
 
 
     return (
-        
-        <div className="project-cap">
-            <h1 className="app-name">NUME</h1>
-            <p className="slogan">We're all about the numbers...</p>
-        </div>
+        <>
+            <head>
+                <title>Capstone - Nume</title>
+            </head>
+
+            <body>
+                <header className="header">
+                    <div className="container">
+                        <div>
+                            <h1>An App For Numeracy</h1>
+                            <p>
+                                We're all about the numbers.
+                                Build your mathematical
+                                ability and see the world
+                                in a different light. Let's
+                                conquer the fear of math, together.
+                            </p>
+                        </div>
+                        <img src="images/math-bracket.svg" alt=""/>
+                    </div>
+                </header>
+
+                <section></section>
+            </body>
+        </>
     )
 }
 
