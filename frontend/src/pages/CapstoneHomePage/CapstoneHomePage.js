@@ -27,7 +27,27 @@ const CapstoneHomePage = () => {
                     </div>
                 </header>
 
-                <section></section>
+                <section className="boxes">
+                    <div className="container">
+                        <div className="box">
+                            <h2><i className="icon"></i>
+                            Languages</h2>
+                            <p>
+                            Python, React.js, JavaScript,
+                            HTML, CSS
+                            </p>
+                        </div>
+                        <div className="box">
+                            <h2><i className="icon"></i>
+                            Technology</h2>
+                            <p>
+                            Django, Django REST Framework,
+                            MySQL, Postman, Git, GitHub
+
+                            </p>
+                        </div>
+                    </div>
+                </section>
             </body>
         </>
     )
