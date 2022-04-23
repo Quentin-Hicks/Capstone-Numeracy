@@ -14,7 +14,7 @@ const CapstoneHomePage = () => {
                 <header className="header">
                     <div className="container">
                         <div>
-                            <h1>An App For Numeracy</h1>
+                            <h1>Capstone - Nume</h1>
                             <p>
                                 We're all about the numbers.
                                 Build your mathematical
