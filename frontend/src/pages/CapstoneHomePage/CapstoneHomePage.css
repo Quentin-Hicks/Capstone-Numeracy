@@ -40,6 +40,12 @@ h1, h2 {
     line-height: 1.2;
 }
 
-header img {
+.header img {
     max-width: 300px;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
