@@ -7,11 +7,11 @@
 }
 
 body {
-    font-family: 'Nunito', sans-serif;
+    /* font-family: 'Nunito', sans-serif; */
     font-size: 16px;
     line-height: 1.5;
     color: #333;
-    background: rgb(53, 107, 201);
+    background: rgb(27, 27, 27);
 }
 
 img {
@@ -29,9 +29,9 @@ h1, h2 {
 }
 
 .header {
-    background-color: rgba(27, 27, 27, 0.979);
+    /* background-color: rgba(27, 27, 27, 0.979); */
     color: rgb(119, 180, 236);
-    min-height: 400px;
+    min-height: 350px;
 }
 
 .header h1 {
@@ -41,7 +41,7 @@ h1, h2 {
 }
 
 .header img {
-    max-width: 300px;
+    max-width: 250px;
 }
 
 .header .container {
@@ -57,8 +57,8 @@ h1, h2 {
 
 .box {
     flex: 1;
-    background: rgb(27, 27, 27);
-    color: rgb(119, 180, 236);
+    background: rgb(79, 158, 231);
+    color: rgb(24, 24, 24);
     border-radius: 10px;
     margin: 20px 10px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
