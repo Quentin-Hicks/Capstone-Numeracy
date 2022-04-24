@@ -38,7 +38,7 @@ const CapstoneHomePage = () => {
                             </p>
                         </div>
                         <div className="box">
-                            <h2><i className="icon"></i>
+                            <h2><i class="fa-thin fa-gears"></i>
                             Technology</h2>
                             <p>
                             Django, Django REST Framework,
