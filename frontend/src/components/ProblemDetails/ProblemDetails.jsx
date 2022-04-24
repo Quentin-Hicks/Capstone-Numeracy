@@ -99,35 +99,75 @@ const ProblemDetails = (props) => {
     function currentProblemView(){
 
         return (
-            <div className="pbm-box">
-                {/* <h1>Here's a problem</h1> */}
-                <div className="pbm-container">
-                    <h1 className="pbm-title">{activeProblem.title}</h1>
-                    <div className="pbm-info">
-                        <p>{activeProblem.content}</p>
-                        <p>Resources: {activeProblem.resources}</p>
-                    </div>
-                    <div className="pbm-btns">
-                        <button className="pbm-show-hint" onClick={() => setShowHint(!showHint)}>Hint</button>
-                        <div className="pbm-hint">
-                            {
-                                showHint?<p>{activeProblem.hints}</p>:null
-                            }
+            <>
+                <body>
+                    <header className="det-header">
+                        <div className="det-container">
+                            <div>
+                                <h1 className="pbm-title">{activeProblem.title}</h1>
+                            </div>
                         </div>
-                        <button className="pbm-show-ans" onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
-                        <div className="pbm-ans">
-                            {
-                                showAnswer?<p>{activeProblem.answer}</p>:null
-                            }
+                    </header>
+
+                    <section className="details">
+                        <div className="det-container">
+                            <div className="pbm-content">
+                                <p>{activeProblem.content}</p>
+                                <p>Resources: {activeProblem.resources}</p>
+                            </div>
+                            <div className="pbm-btn">
+                                <button className="pbm-show-hint" onClick={() => setShowHint(!showHint)}>Hint</button>
+                                <div className="pbm-hint">
+                                    {
+                                        showHint?<p>{activeProblem.hints}</p>:null
+                                    }
+                                </div>
+                                <button className="pbm-show-ans" onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
+                                <div className="pbm-ans">
+                                    {
+                                        showAnswer?<p>{activeProblem.answer}</p>:null
+                                    }
+                                </div>
+                            </div>
+                            <div className="det-form">
+                                <form className="pbm-form" onSubmit={handleSubmit}>
+                                    <input type="text" className="ans-input" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
+                                    <button type="submit" className="pbm-btn">Submit Answer</button>
+                                </form>
+                            </div>
                         </div>
+                    </section>
+                </body>
+
+                {/* <div className="pbm-box">
+                    <h1>Here's a problem</h1>
+                    <div className="pbm-container">
+                        <h1 className="pbm-title">{activeProblem.title}</h1>
+                        <div className="pbm-info">
+                            <p>{activeProblem.content}</p>
+                            <p>Resources: {activeProblem.resources}</p>
+                        </div>
+                        <div className="pbm-btns">
+                            <button className="pbm-show-hint" onClick={() => setShowHint(!showHint)}>Hint</button>
+                            <div className="pbm-hint">
+                                {
+                                    showHint?<p>{activeProblem.hints}</p>:null
+                                }
+                            </div>
+                            <button className="pbm-show-ans" onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
+                            <div className="pbm-ans">
+                                {
+                                    showAnswer?<p>{activeProblem.answer}</p>:null
+                                }
+                            </div>
+                        </div>
+                        <form className="pbm-form" onSubmit={handleSubmit}>
+                            <input type="text" className="ans-input" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
+                            <button type="submit" className="pbm-btn">Submit Answer</button>
+                        </form>
                     </div>
-                    <form className="pbm-form" onSubmit={handleSubmit}>
-                        {/* <h3></h3> */}
-                        <input type="text" className="ans-input" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
-                        <button type="submit" className="pbm-btn">Submit Answer</button>
-                    </form>
-                </div>
-            </div>
+                </div> */}
+            </>
         )
     }
 

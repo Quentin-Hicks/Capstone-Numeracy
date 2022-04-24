@@ -1,4 +1,4 @@
-.pbm-container{
+/* .pbm-container{
     font-size: 20px;
     margin-bottom: 100px;
  }
@@ -24,41 +24,11 @@
     display: flex;
     justify-content: center;
     /* flex-direction: column; */
-}
 
-.pbm-hint{
+/* .pbm-hint{
     color: rgb(119, 180, 236);
 }
 
 .pbm-ans{
     color: rgb(119, 180, 236);
-}
-
-/* .pbm-box{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
-    height: 40vh;
-} */
-
-/* .pbm-btn{
-    padding: 5px;
-    border: 2px solid gray;
-    border-radius: 4px;
-    margin: 10px;
-}
-
-.pbm-form{
-    display: flex;
-}
-
-.pbm-element{
-    margin: 5px;
-}
-
-.ans-input{
-    text-align: center;
-    border-radius: 5px;
-    border: 1px solid gray;
 } */
