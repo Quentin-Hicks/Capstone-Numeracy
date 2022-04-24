@@ -27,7 +27,7 @@
 
 .card {
     overflow: hidden;
-    box-shadow: 0 2px 20px gray;
+    /* box-shadow: 0 2px 20px gray; */
     border-radius: radius;
     display: flex;
     flex-direction: column;
