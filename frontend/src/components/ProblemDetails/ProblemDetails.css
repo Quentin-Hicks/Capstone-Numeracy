@@ -6,11 +6,11 @@
 .pbm-title{
     margin: 50px;
     text-align: center;
-    color: yellow;
+    color: rgb(119, 180, 236);
 }
 
 .pbm-info{
-    color: yellow;
+    color: rgb(119, 180, 236);
     text-align: center;
     margin-right: 40rem;
 }
@@ -27,11 +27,11 @@
 }
 
 .pbm-hint{
-    color: yellow;
+    color: rgb(119, 180, 236);
 }
 
 .pbm-ans{
-    color: yellow;
+    color: rgb(119, 180, 236);
 }
 
 /* .pbm-box{

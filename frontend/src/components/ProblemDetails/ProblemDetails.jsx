@@ -7,6 +7,7 @@ import {toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 toast.configure()
+
 const ProblemDetails = (props) => {
 
     const {id} = useParams()
@@ -147,13 +148,13 @@ const ProblemDetails = (props) => {
         <div>
             {currentProblemView()}
             <div >
-                <Chart
+                {/* <Chart
                     chartType="PieChart"
                     width="100%"
                     height="400px"
                     data={data}
                     options={options}
-                />
+                /> */}
             </div>
         </div>
     )
