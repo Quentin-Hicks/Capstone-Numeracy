@@ -1,7 +1,7 @@
 /* @import url(https://fonts.google.com/specimen/Anek+Odia); */
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     /* margin: 2rem; */
 }
 
@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 4rem;
-    color: rgb(182, 182, 15);
+    color: rgb(119, 180, 236);
 }
 
 .card_image {
@@ -36,19 +36,21 @@ body {
 
 .card {
     overflow: hidden;
-    box-shadow: 0 2px 20px rgb(211, 214, 13);
-    border-radius: radius;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
     transition: transform 200ms ease-in;
-    background-color: rgb(1, 21, 29);
+    background: rgb(79, 158, 231);
+    color: rgb(24, 24, 24);
+    /* padding: 1rem; */
 }
 
 .card_title {
     padding: 1rem;
-    color: rgb(161, 194, 15)
+    /* color: rgb(24, 24, 24) */
 }
 
 .card_details {
@@ -62,8 +64,8 @@ body {
     font-size: 1rem;
     margin: 1rem;
     border: 2px solid;
-    color: rgba(196, 224, 70, 0.87);
-    border-radius: 2px;
+    color: rgb(24, 24, 24);
+    border-radius: 5px;
     transition: 200ms ease-in, color 200ms ease-in;
 }
 
@@ -72,6 +74,6 @@ body {
 }
 
 .card_btn:hover {
-    background: rgba(114, 81, 175, 0.678);
+    background: rgba(224, 217, 238, 0.678);
     /* color: rgb(161, 194, 15); */
 }
