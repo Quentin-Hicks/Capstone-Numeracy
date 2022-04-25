@@ -104,7 +104,7 @@ const ProblemDetails = (props) => {
                     <header className="det-header">
                         <div className="det-container">
                             <div>
-                                <h1 className="pbm-title">{activeProblem.title}</h1>
+                                <h1>{activeProblem.title}</h1>
                             </div>
                         </div>
                     </header>
@@ -115,26 +115,26 @@ const ProblemDetails = (props) => {
                                 <p>{activeProblem.content}</p>
                                 <p>Resources: {activeProblem.resources}</p>
                             </div>
-                            <div className="pbm-btn">
-                                <button className="pbm-show-hint" onClick={() => setShowHint(!showHint)}>Hint</button>
+                            <div className="btn-container">
+                                <button className="pbm-btn" onClick={() => setShowHint(!showHint)}>Hint</button>
                                 <div className="pbm-hint">
                                     {
                                         showHint?<p>{activeProblem.hints}</p>:null
                                     }
                                 </div>
-                                <button className="pbm-show-ans" onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
+                                <button className="pbm-btn" onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
                                 <div className="pbm-ans">
                                     {
                                         showAnswer?<p>{activeProblem.answer}</p>:null
                                     }
                                 </div>
                             </div>
-                            <div className="det-form">
-                                <form className="pbm-form" onSubmit={handleSubmit}>
+                            <form className="form-container" onSubmit={handleSubmit}>
+                                <div className="form-smt">
                                     <input type="text" className="ans-input" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
-                                    <button type="submit" className="pbm-btn">Submit Answer</button>
-                                </form>
-                            </div>
+                                    <button type="submit" className="smt-btn">Submit Answer</button>
+                                </div>
+                            </form>
                         </div>
                     </section>
                 </body>

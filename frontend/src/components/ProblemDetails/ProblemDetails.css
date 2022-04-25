@@ -26,9 +26,89 @@
     /* flex-direction: column; */
 
 /* .pbm-hint{
+
     color: rgb(119, 180, 236);
 }
 
 .pbm-ans{
     color: rgb(119, 180, 236);
 } */
+
+.det-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.det-header {
+    color: rgb(119, 180, 236);
+    min-height: 75px;
+    margin-top: 8rem;
+}
+
+.det-header h1 {
+    font-size: 3rem;
+}
+
+.det-header .det-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.details {
+    color: rgb(119, 180, 236);
+}
+
+.details .det-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pbm-content {
+    margin-bottom: 20px;
+}
+
+.pbm-content p {
+    margin: 15px 20px 0;
+    max-width: 400px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 50px;
+}
+
+.pbm-btn {
+    padding: 0.5rem;
+    margin: 1rem;
+    font-size: 1rem;
+    border: 2px;
+    border-radius: 5px;
+}
+
+.smt-btn {
+    padding: 0.5rem;
+    margin: 1rem;
+    font-size: 1rem;
+    border: 2px;
+    border-radius: 5px;
+}
+.ans-input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 2px solid;
+}
