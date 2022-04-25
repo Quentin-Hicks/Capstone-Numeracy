@@ -129,7 +129,7 @@ const ProblemDetails = (props) => {
                                     }
                                 </div>
                             </div>
-                            <form className="form-container" onSubmit={handleSubmit}>
+                            <form className="pbm-form-container" onSubmit={handleSubmit}>
                                 <div className="form-smt">
                                     <input type="text" className="ans-input" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
                                     <button type="submit" className="smt-btn">Submit Answer</button>
