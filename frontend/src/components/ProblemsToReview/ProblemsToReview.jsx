@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Modal from "../../components/Modal/Modal";
 import axios from "axios"
 
-const ProblemsToReview = ({submittedProblems}, {problems}) => {
+const ProblemsToReview = ({submittedProblems}) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -16,9 +16,8 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
     const [liveStatus, setLiveStatus] = useState('')
 
     const [changedProblem, setChangedProblem] = useState('')
-
-    function handleUpdate(e){
-        e.preventDefault()
+    
+    function update(){
         let updatedProblem = {
             title: title,
             content: content,
@@ -29,6 +28,7 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
         }
         setChangedProblem(updatedProblem)
         console.log('Problem Updated To: ', updatedProblem)
+        setIsOpen(true)
         updateProblem(updatedProblem, id)
     }
 
@@ -77,11 +77,17 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
         )
     }
 
+    function updateAndClose(){
+        update()
+        setIsOpen(false)
+        console.log('updated and closed')
+    }
+
     return (
         <div>
             {problemCardData()}
             
-            <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+            <Modal open={isOpen} onClose={updateAndClose}>
                 <div className="review-container">
                     <form className="review-form">
                         <label className="review-label">Title</label>
@@ -141,7 +147,9 @@ const ProblemsToReview = ({submittedProblems}, {problems}) => {
                         </p>
                     </form>
                 </div>
-                <button className="update-btn" onClick={handleUpdate}>Update</button>
+                {/* <div className="upt-btn">
+                    <button className="update-btn" onClick={handleUpdate}>Update</button>
+                </div> */}
             </Modal>
         </div>
     )
