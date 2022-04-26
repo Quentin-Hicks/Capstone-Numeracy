@@ -80,7 +80,6 @@ const ProblemsToReview = ({submittedProblems}) => {
     function updateAndClose(){
         update()
         setIsOpen(false)
-        console.log('updated and closed')
     }
 
     return (
@@ -147,9 +146,6 @@ const ProblemsToReview = ({submittedProblems}) => {
                         </p>
                     </form>
                 </div>
-                {/* <div className="upt-btn">
-                    <button className="update-btn" onClick={handleUpdate}>Update</button>
-                </div> */}
             </Modal>
         </div>
     )

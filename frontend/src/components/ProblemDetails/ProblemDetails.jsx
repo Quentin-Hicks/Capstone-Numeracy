@@ -113,7 +113,11 @@ const ProblemDetails = (props) => {
                         <div className="det-container">
                             <div className="pbm-content">
                                 <p>{activeProblem.content}</p>
-                                <p>Resources: {activeProblem.resources}</p>
+                                <p>Resources:
+                                    <a href={`${activeProblem.resources}`}>
+                                        Unit Conversion
+                                    </a>
+                                </p>
                             </div>
                             <div className="btn-container">
                                 <button className="pbm-btn" onClick={() => setShowHint(!showHint)}>Hint</button>
