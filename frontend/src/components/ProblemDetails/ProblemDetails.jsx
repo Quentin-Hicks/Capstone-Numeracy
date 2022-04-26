@@ -142,35 +142,6 @@ const ProblemDetails = (props) => {
                         </div>
                     </section>
                 </body>
-
-                {/* <div className="pbm-box">
-                    <h1>Here's a problem</h1>
-                    <div className="pbm-container">
-                        <h1 className="pbm-title">{activeProblem.title}</h1>
-                        <div className="pbm-info">
-                            <p>{activeProblem.content}</p>
-                            <p>Resources: {activeProblem.resources}</p>
-                        </div>
-                        <div className="pbm-btns">
-                            <button className="pbm-show-hint" onClick={() => setShowHint(!showHint)}>Hint</button>
-                            <div className="pbm-hint">
-                                {
-                                    showHint?<p>{activeProblem.hints}</p>:null
-                                }
-                            </div>
-                            <button className="pbm-show-ans" onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
-                            <div className="pbm-ans">
-                                {
-                                    showAnswer?<p>{activeProblem.answer}</p>:null
-                                }
-                            </div>
-                        </div>
-                        <form className="pbm-form" onSubmit={handleSubmit}>
-                            <input type="text" className="ans-input" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
-                            <button type="submit" className="pbm-btn">Submit Answer</button>
-                        </form>
-                    </div>
-                </div> */}
             </>
         )
     }
@@ -185,6 +156,8 @@ const ProblemDetails = (props) => {
 
     const options = {
         pieHole: 0.4,
+        backgroundColor: '#333',
+        colorText: 'white'
         // is3D: false,
     }
 
@@ -192,13 +165,13 @@ const ProblemDetails = (props) => {
         <div>
             {currentProblemView()}
             <div >
-                {/* <Chart
+                <Chart
                     chartType="PieChart"
                     width="100%"
                     height="400px"
                     data={data}
                     options={options}
-                /> */}
+                />
             </div>
         </div>
     )
