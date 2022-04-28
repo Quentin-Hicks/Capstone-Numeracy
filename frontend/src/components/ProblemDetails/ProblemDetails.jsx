@@ -60,7 +60,7 @@ const ProblemDetails = (props) => {
 
     function hintShown(){
 
-        console.log('here is your hint')
+        // console.log('here is your hint')
 
         setShowHint(!showHint)
 
