@@ -38,26 +38,26 @@ const ProblemDetails = (props) => {
     }
 
     function isCorrect(){
-        console.log(activeProblem.answer)
         if(userInput == activeProblem.answer){
 
-            setNumberOfCorrectAnswers(activeProblem.correctAnswers++)
-            setNumberOfIncorrectAnswers(activeProblem.incorrectAnswers)
-            setNumberOfHintsUsed(activeProblem.hintsUsed)
+            console.log('Correct Answer: ', activeProblem.answer)
+            
+            activeProblem.correctAnswers++
+            console.log(activeProblem.correctAnswers)
 
-            console.log(numberOfCorrectAnswers)
-            console.log(numberOfIncorrectAnswers)
-            console.log(numberOfHintsUsed)
+            updateData(activeProblem.correctAnswers, activeProblem.incorrectAnswers, activeProblem.hintsUsed)
 
             correctAnswerNotifcation()
     
         } else if(userInput != activeProblem.answer){
-            
-            setNumberOfCorrectAnswers(activeProblem.correctAnswers)
-            setNumberOfIncorrectAnswers(activeProblem.incorrectAnswers++)
-            setNumberOfHintsUsed(activeProblem.hintsUsed)
 
-            updateData(numberOfCorrectAnswers, numberOfIncorrectAnswers, numberOfHintsUsed)
+            console.log('Incorrect Answer')
+
+            activeProblem.incorrectAnswers++
+            console.log(activeProblem.incorrectAnswers)
+
+            updateData(activeProblem.correctAnswers, activeProblem.incorrectAnswers, activeProblem.hintsUsed)
+
             wrongAnswerNotification()
         }
     }
@@ -99,50 +99,48 @@ const ProblemDetails = (props) => {
     function currentProblemView(){
 
         return (
-            <>
-                <body>
-                    <header className="det-header">
-                        <div className="det-container">
-                            <div>
-                                <h1>{activeProblem.title}</h1>
-                            </div>
+            <body>
+                <header className="det-header">
+                    <div className="det-container">
+                        <div>
+                            <h1>{activeProblem.title}</h1>
                         </div>
-                    </header>
+                    </div>
+                </header>
 
-                    <section className="details">
-                        <div className="det-container">
-                            <div className="pbm-content">
-                                <p>{activeProblem.content}</p>
-                                <p>Resources:
-                                    <a href={`${activeProblem.resources}`}>
-                                        Unit Conversion
-                                    </a>
-                                </p>
-                            </div>
-                            <div className="btn-container">
-                                <button className="pbm-btn" onClick={() => setShowHint(!showHint)}>Hint</button>
-                                <div className="pbm-hint">
-                                    {
-                                        showHint?<p>{activeProblem.hints}</p>:null
-                                    }
-                                </div>
-                                <button className="pbm-btn" onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
-                                <div className="pbm-ans">
-                                    {
-                                        showAnswer?<p>{activeProblem.answer}</p>:null
-                                    }
-                                </div>
-                            </div>
-                            <form className="pbm-form-container" onSubmit={handleSubmit}>
-                                <div className="form-smt">
-                                    <input type="text" className="ans-input" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
-                                    <button type="submit" className="smt-btn">Submit Answer</button>
-                                </div>
-                            </form>
+                <section className="details">
+                    <div className="det-container">
+                        <div className="pbm-content">
+                            <p>{activeProblem.content}</p>
+                            <p>Resources:
+                                <a href={`${activeProblem.resources}`}>
+                                    Unit Conversion
+                                </a>
+                            </p>
                         </div>
-                    </section>
-                </body>
-            </>
+                        <div className="btn-container">
+                            <button className="pbm-btn" onClick={() => setShowHint(!showHint)}>Hint</button>
+                            <div className="pbm-hint">
+                                {
+                                    showHint?<p>{activeProblem.hints}</p>:null
+                                }
+                            </div>
+                            <button className="pbm-btn" onClick={() => setShowAnsewr(!showAnswer)}>Show Answer</button>
+                            <div className="pbm-ans">
+                                {
+                                    showAnswer?<p>{activeProblem.answer}</p>:null
+                                }
+                            </div>
+                        </div>
+                        <form className="pbm-form-container" onSubmit={handleSubmit}>
+                            <div className="form-smt">
+                                <input type="text" className="ans-input" onChange={(e) => setUserInput(e.target.value)} placeholder='Enter answer here...'/>
+                                <button type="submit" className="smt-btn">Submit Answer</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </body>
         )
     }
 
@@ -157,12 +155,11 @@ const ProblemDetails = (props) => {
     const options = {
         pieHole: 0.4,
         backgroundColor: '#333',
-        colorText: 'white'
         // is3D: false,
     }
 
     return (
-        <div>
+        <>
             {currentProblemView()}
             <div >
                 <Chart
@@ -173,7 +170,7 @@ const ProblemDetails = (props) => {
                     options={options}
                 />
             </div>
-        </div>
+        </>
     )
 }
 
