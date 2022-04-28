@@ -107,7 +107,7 @@ const ProblemDetails = (props) => {
     function currentProblemView(){
 
         return (
-            <body>
+            <>
                 <header className="det-header">
                     <div className="det-container">
                         <div>
@@ -148,7 +148,7 @@ const ProblemDetails = (props) => {
                         </form>
                     </div>
                 </section>
-            </body>
+            </>
         )
     }
 
