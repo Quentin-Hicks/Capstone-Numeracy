@@ -39,7 +39,7 @@ function App() {
     }
 
   return (
-        <div> 
+        <> 
         <CapstoneNavBar />
         <Routes>
             <Route path="/" element={<CapstoneHomePage />} />
@@ -59,7 +59,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} /> */}
         </Routes>
         <Footer />
-      </div>
+      </>
   )
 }
 
