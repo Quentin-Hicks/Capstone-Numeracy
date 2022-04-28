@@ -168,8 +168,11 @@ const ProblemDetails = (props) => {
 
     return (
         <>
-            {currentProblemView()}
-            <div >
+            <div className="pbm-view">
+                {currentProblemView()}
+            </div>
+
+            <div className="pie">
                 <Chart
                     chartType="PieChart"
                     width="100%"

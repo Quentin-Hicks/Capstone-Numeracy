@@ -1,17 +1,18 @@
 import "./Footer.css";
 
 const Footer = () => {
+
   return (
-    <footer>
-      <div className="footer-content">
-        {/* <h3>NUME</h3> */}
-        <ul className="socials">
+    
+    <div className="footer">
+      <div className="footer-container">
+        <p>Copyright © 2022</p>{" "}
+        {/* <ul className="socials">
           <li><a href="#"><i className="linkedin"></i></a></li>
           <li><a href="#"><i className="github"></i></a></li>
-        </ul>
+        </ul> */}
       </div>
-      <p>Copyright © 2022</p>{" "}
-    </footer>
+    </div>
   );
 };
 
