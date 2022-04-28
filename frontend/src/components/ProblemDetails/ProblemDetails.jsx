@@ -17,10 +17,6 @@ const ProblemDetails = (props) => {
     const [showAnswer, setShowAnsewr] = useState(false)
     const [userInput, setUserInput] = useState('')
 
-    const [numberOfHintsUsed, setNumberOfHintsUsed] = useState('')
-    const [numberOfCorrectAnswers, setNumberOfCorrectAnswers] = useState('')
-    const [numberOfIncorrectAnswers, setNumberOfIncorrectAnswers] = useState('')
-
     useEffect(()=>{
         getProblemById(id)
         
@@ -41,7 +37,7 @@ const ProblemDetails = (props) => {
         if(userInput == activeProblem.answer){
 
             console.log('Correct Answer: ', activeProblem.answer)
-            
+
             activeProblem.correctAnswers++
             console.log(activeProblem.correctAnswers)
 
@@ -60,6 +56,18 @@ const ProblemDetails = (props) => {
 
             wrongAnswerNotification()
         }
+    }
+
+    function hintShown(){
+
+        console.log('here is your hint')
+
+        setShowHint(!showHint)
+
+        activeProblem.hintsUsed++
+        console.log(activeProblem.hintsUsed)
+
+        updateData(activeProblem.correctAnswers, activeProblem.incorrectAnswers, activeProblem.hintsUsed)
     }
 
     function updateData(numOfCorrect, numOfIncorrect, numOfHints){
@@ -119,7 +127,7 @@ const ProblemDetails = (props) => {
                             </p>
                         </div>
                         <div className="btn-container">
-                            <button className="pbm-btn" onClick={() => setShowHint(!showHint)}>Hint</button>
+                            <button className="pbm-btn" onClick={hintShown}>Hint</button>
                             <div className="pbm-hint">
                                 {
                                     showHint?<p>{activeProblem.hints}</p>:null
