@@ -83,3 +83,14 @@
 .pbm-view {
     margin-bottom: 100px;
 }
+
+.pie-container {
+    display: flex;
+    justify-content: center;
+}
+
+.pie-chart {
+    width: 50%;
+    border: 10px solid rgb(39, 88, 134);
+    border-radius: 5px;
+}

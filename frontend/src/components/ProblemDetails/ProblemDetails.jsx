@@ -162,7 +162,7 @@ const ProblemDetails = (props) => {
 
     const options = {
         pieHole: 0.4,
-        backgroundColor: '#333',
+        backgroundColor: 'gray',
         // is3D: false,
     }
 
@@ -172,14 +172,16 @@ const ProblemDetails = (props) => {
                 {currentProblemView()}
             </div>
 
-            <div className="pie">
-                <Chart
-                    chartType="PieChart"
-                    width="100%"
-                    height="400px"
-                    data={data}
-                    options={options}
-                />
+            <div className="pie-container">
+                <div className="pie-chart">
+                    <Chart
+                        chartType="PieChart"
+                        
+                        height="400px"
+                        data={data}
+                        options={options}
+                    />
+                </div>
             </div>
         </>
     )
