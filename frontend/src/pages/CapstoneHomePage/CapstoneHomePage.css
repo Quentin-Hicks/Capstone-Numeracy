@@ -19,50 +19,47 @@ img {
     max-width: 200px;
 }
 
-h1, h2 {
-    margin-bottom: 15px;
-}
-
-.container {
+.capstone .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 30px;
 }
 
-.header {
-    /* background-color: rgba(27, 27, 27, 0.979); */
+.capstone {
     color: rgb(119, 180, 236);
-    min-height: 350px;
+    text-align: center;
+    margin: 300px;
+    
 }
 
-.header h1 {
-    font-size: 3rem;
+.capstone h1 {
+    font-size: 4rem;
     font-weight: bold;
     line-height: 1.2;
+    padding-bottom: 20px;
 }
 
 .header img {
     max-width: 250px;
 }
 
-.header .container {
+.capstone .container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.boxes .container {
-    display: flex;
-    justify-content: space-between;
+.capstone h4 {
+    max-width: 600px;
+    font-weight: bold;
 }
 
 .box {
-    flex: 1;
-    background: rgb(79, 158, 231);
+    background: rgba(72, 158, 238, 0.993);
     color: rgb(24, 24, 24);
     border-radius: 10px;
     margin: 20px 10px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    /* box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6); */
     padding: 15px 20px;
 }
 

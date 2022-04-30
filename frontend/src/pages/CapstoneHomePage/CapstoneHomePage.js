@@ -5,25 +5,22 @@ const CapstoneHomePage = () => {
 
 
     return (
-        <>
-            
-            <header className="header">
-                <div className="container">
-                    <div>
-                        <h1>Capstone - Nume</h1>
-                        <p>
-                            We're all about the numbers.
-                            Build your mathematical
-                            ability and see the world
-                            in a different light. Let's
-                            conquer the fear of math, together.
-                        </p>
-                    </div>
-                    <img src="images/math-bracket.svg" alt=""/>
+        <div className="capstone">
+            <div className="container">
+                <div className="box">
+                    <h1>Nume</h1>
+                    <h4>
+                        We're all about the numbers.
+                        Build your mathematical
+                        ability and see the world
+                        in a different light. Let's
+                        conquer the fear of math, together.
+                    </h4>
                 </div>
-            </header>
+                {/* <img src="images/math-bracket.svg" alt=""/> */}
+            </div>
 
-            <section className="boxes">
+            {/* <section className="boxes">
                 <div className="container">
                     <div className="box">
                         <h2><i className="icon"></i>
@@ -43,8 +40,8 @@ const CapstoneHomePage = () => {
                         </p>
                     </div>
                 </div>
-            </section>
-        </>
+            </section> */}
+        </div>
     )
 }
 
